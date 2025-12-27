@@ -2,11 +2,11 @@
    CSS Custom Properties (Variables)
    =================================== */
 :root {
-    /* Color Palette - Light Mode */
-    --color-primary: #4F46E5;
-    --color-primary-dark: #4338CA;
-    --color-primary-light: #6366F1;
-    --color-secondary: #0EA5E9;
+    /* Color Palette - Light Mode - Based on Logo Colors */
+    --color-primary: #4454a4;
+    --color-primary-dark: #363f7d;
+    --color-primary-light: #5a6bc0;
+    --color-secondary: #3da0da;
     --color-dark: #1F2937;
     --color-dark-alt: #374151;
     --color-gray: #6B7280;
@@ -475,7 +475,7 @@ p {
 .btn-primary:hover {
     background-color: var(--color-primary-dark);
     transform: translateY(-2px);
-    box-shadow: 0 8px 16px rgba(79, 70, 229, 0.3);
+    box-shadow: 0 8px 16px rgba(68, 84, 164, 0.3);
 }
 
 .btn-secondary {
@@ -525,7 +525,7 @@ p {
     align-items: center;
     justify-content: center;
     color: var(--color-text);
-    background-color: rgba(79, 70, 229, 0.1);
+    background-color: rgba(68, 84, 164, 0.1);
     border: 2px solid var(--color-primary);
     border-radius: 50%;
     cursor: pointer;
@@ -551,14 +551,14 @@ p {
 /* Scroll down in dark mode */
 :root[data-theme="dark"] .scroll-down {
     color: var(--color-white);
-    background-color: rgba(79, 70, 229, 0.2);
+    background-color: rgba(68, 84, 164, 0.2);
     border-color: rgba(255, 255, 255, 0.3);
 }
 
 @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) .scroll-down {
         color: var(--color-white);
-        background-color: rgba(79, 70, 229, 0.2);
+        background-color: rgba(68, 84, 164, 0.2);
         border-color: rgba(255, 255, 255, 0.3);
     }
 }
@@ -641,7 +641,7 @@ p {
 
 .stat-item:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 16px rgba(79, 70, 229, 0.2);
+    box-shadow: 0 8px 16px rgba(68, 84, 164, 0.2);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -721,7 +721,7 @@ p {
 .service-card:hover {
     border-color: var(--color-primary);
     transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(79, 70, 229, 0.25);
+    box-shadow: 0 8px 24px rgba(68, 84, 164, 0.25);
 }
 
 .service-icon {
@@ -801,7 +801,7 @@ p {
     border-color: var(--color-primary);
     color: var(--color-primary);
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.25);
+    box-shadow: 0 4px 12px rgba(68, 84, 164, 0.25);
 }
 
 /* ===================================
@@ -842,7 +842,7 @@ p {
 .testimonial-card:hover {
     border-color: var(--color-primary);
     transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(79, 70, 229, 0.25);
+    box-shadow: 0 8px 24px rgba(68, 84, 164, 0.25);
 }
 
 .testimonial-icon {
@@ -965,6 +965,24 @@ p {
 
 .site-footer p {
     margin: 0;
+}
+
+.footer-credit {
+    font-size: 0.75rem;
+    opacity: 0.7;
+    margin-top: 0.5rem !important;
+    font-weight: 400;
+}
+
+.footer-credit a {
+    color: var(--color-primary);
+    text-decoration: underline;
+    transition: var(--transition-base);
+}
+
+.footer-credit a:hover {
+    color: var(--color-secondary);
+    opacity: 1;
 }
 
 /* Footer in dark mode */
