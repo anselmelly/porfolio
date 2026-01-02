@@ -97,119 +97,10 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <svg class="hero-background" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
-            <defs>
-                <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" style="stop-color:#4454a4;stop-opacity:0.3" />
-                    <stop offset="100%" style="stop-color:#3da0da;stop-opacity:0.3" />
-                </linearGradient>
-            </defs>
-            
-            <!-- Network connections (lines) -->
-            <line x1="100" y1="150" x2="250" y2="200" stroke="url(#grad1)" stroke-width="2" opacity="0.4"/>
-            <line x1="250" y1="200" x2="400" y2="180" stroke="url(#grad1)" stroke-width="2" opacity="0.4"/>
-            <line x1="400" y1="180" x2="550" y2="220" stroke="url(#grad1)" stroke-width="2" opacity="0.4"/>
-            <line x1="550" y1="220" x2="700" y2="160" stroke="url(#grad1)" stroke-width="2" opacity="0.4"/>
-            <line x1="700" y1="160" x2="850" y2="200" stroke="url(#grad1)" stroke-width="2" opacity="0.4"/>
-            <line x1="850" y1="200" x2="1000" y2="150" stroke="url(#grad1)" stroke-width="2" opacity="0.4"/>
-            
-            <line x1="150" y1="400" x2="300" y2="450" stroke="url(#grad1)" stroke-width="2" opacity="0.4"/>
-            <line x1="300" y1="450" x2="500" y2="420" stroke="url(#grad1)" stroke-width="2" opacity="0.4"/>
-            <line x1="500" y1="420" x2="650" y2="480" stroke="url(#grad1)" stroke-width="2" opacity="0.4"/>
-            <line x1="650" y1="480" x2="850" y2="430" stroke="url(#grad1)" stroke-width="2" opacity="0.4"/>
-            <line x1="850" y1="430" x2="1050" y2="400" stroke="url(#grad1)" stroke-width="2" opacity="0.4"/>
-            
-            <line x1="200" y1="600" x2="350" y2="650" stroke="url(#grad1)" stroke-width="2" opacity="0.4"/>
-            <line x1="350" y1="650" x2="550" y2="620" stroke="url(#grad1)" stroke-width="2" opacity="0.4"/>
-            <line x1="550" y1="620" x2="750" y2="680" stroke="url(#grad1)" stroke-width="2" opacity="0.4"/>
-            <line x1="750" y1="680" x2="950" y2="640" stroke="url(#grad1)" stroke-width="2" opacity="0.4"/>
-            
-            <!-- Vertical connections -->
-            <line x1="250" y1="200" x2="300" y2="450" stroke="url(#grad1)" stroke-width="2" opacity="0.3"/>
-            <line x1="550" y1="220" x2="500" y2="420" stroke="url(#grad1)" stroke-width="2" opacity="0.3"/>
-            <line x1="850" y1="200" x2="850" y2="430" stroke="url(#grad1)" stroke-width="2" opacity="0.3"/>
-            <line x1="350" y1="650" x2="400" y2="180" stroke="url(#grad1)" stroke-width="2" opacity="0.2"/>
-            <line x1="750" y1="680" x2="700" y2="160" stroke="url(#grad1)" stroke-width="2" opacity="0.2"/>
-            
-            <!-- Data points (nodes) - with pulsing animation -->
-            <circle cx="100" cy="150" r="8" fill="#4454a4" opacity="0.8">
-                <animate attributeName="r" values="8;12;8" dur="3s" repeatCount="indefinite"/>
-                <animate attributeName="opacity" values="0.8;1;0.8" dur="3s" repeatCount="indefinite"/>
-            </circle>
-            <circle cx="250" cy="200" r="10" fill="#5a6bc0" opacity="0.9">
-                <animate attributeName="r" values="10;14;10" dur="4s" repeatCount="indefinite"/>
-                <animate attributeName="opacity" values="0.9;1;0.9" dur="4s" repeatCount="indefinite"/>
-            </circle>
-            <circle cx="400" cy="180" r="7" fill="#3da0da" opacity="0.7">
-                <animate attributeName="r" values="7;11;7" dur="3.5s" repeatCount="indefinite"/>
-                <animate attributeName="opacity" values="0.7;1;0.7" dur="3.5s" repeatCount="indefinite"/>
-            </circle>
-            <circle cx="550" cy="220" r="9" fill="#4454a4" opacity="0.8">
-                <animate attributeName="r" values="9;13;9" dur="4.2s" repeatCount="indefinite"/>
-                <animate attributeName="opacity" values="0.8;1;0.8" dur="4.2s" repeatCount="indefinite"/>
-            </circle>
-            <circle cx="700" cy="160" r="11" fill="#5a6bc0" opacity="0.9">
-                <animate attributeName="r" values="11;15;11" dur="3.8s" repeatCount="indefinite"/>
-                <animate attributeName="opacity" values="0.9;1;0.9" dur="3.8s" repeatCount="indefinite"/>
-            </circle>
-            <circle cx="850" cy="200" r="8" fill="#3da0da" opacity="0.8">
-                <animate attributeName="r" values="8;12;8" dur="4.5s" repeatCount="indefinite"/>
-                <animate attributeName="opacity" values="0.8;1;0.8" dur="4.5s" repeatCount="indefinite"/>
-            </circle>
-            <circle cx="1000" cy="150" r="10" fill="#4454a4" opacity="0.9">
-                <animate attributeName="r" values="10;14;10" dur="3.3s" repeatCount="indefinite"/>
-                <animate attributeName="opacity" values="0.9;1;0.9" dur="3.3s" repeatCount="indefinite"/>
-            </circle>
-            
-            <circle cx="150" cy="400" r="7" fill="#5a6bc0" opacity="0.7">
-                <animate attributeName="r" values="7;11;7" dur="4.1s" repeatCount="indefinite"/>
-                <animate attributeName="opacity" values="0.7;1;0.7" dur="4.1s" repeatCount="indefinite"/>
-            </circle>
-            <circle cx="300" cy="450" r="9" fill="#3da0da" opacity="0.8">
-                <animate attributeName="r" values="9;13;9" dur="3.7s" repeatCount="indefinite"/>
-                <animate attributeName="opacity" values="0.8;1;0.8" dur="3.7s" repeatCount="indefinite"/>
-            </circle>
-            <circle cx="500" cy="420" r="10" fill="#4454a4" opacity="0.9">
-                <animate attributeName="r" values="10;14;10" dur="4.4s" repeatCount="indefinite"/>
-                <animate attributeName="opacity" values="0.9;1;0.9" dur="4.4s" repeatCount="indefinite"/>
-            </circle>
-            <circle cx="650" cy="480" r="8" fill="#5a6bc0" opacity="0.8">
-                <animate attributeName="r" values="8;12;8" dur="3.6s" repeatCount="indefinite"/>
-                <animate attributeName="opacity" values="0.8;1;0.8" dur="3.6s" repeatCount="indefinite"/>
-            </circle>
-            <circle cx="850" cy="430" r="11" fill="#3da0da" opacity="0.9">
-                <animate attributeName="r" values="11;15;11" dur="4.3s" repeatCount="indefinite"/>
-                <animate attributeName="opacity" values="0.9;1;0.9" dur="4.3s" repeatCount="indefinite"/>
-            </circle>
-            <circle cx="1050" cy="400" r="9" fill="#4454a4" opacity="0.8">
-                <animate attributeName="r" values="9;13;9" dur="3.9s" repeatCount="indefinite"/>
-                <animate attributeName="opacity" values="0.8;1;0.8" dur="3.9s" repeatCount="indefinite"/>
-            </circle>
-            
-            <circle cx="200" cy="600" r="8" fill="#5a6bc0" opacity="0.8">
-                <animate attributeName="r" values="8;12;8" dur="4.6s" repeatCount="indefinite"/>
-                <animate attributeName="opacity" values="0.8;1;0.8" dur="4.6s" repeatCount="indefinite"/>
-            </circle>
-            <circle cx="350" cy="650" r="10" fill="#3da0da" opacity="0.9">
-                <animate attributeName="r" values="10;14;10" dur="3.4s" repeatCount="indefinite"/>
-                <animate attributeName="opacity" values="0.9;1;0.9" dur="3.4s" repeatCount="indefinite"/>
-            </circle>
-            <circle cx="550" cy="620" r="7" fill="#4454a4" opacity="0.7">
-                <animate attributeName="r" values="7;11;7" dur="4.7s" repeatCount="indefinite"/>
-                <animate attributeName="opacity" values="0.7;1;0.7" dur="4.7s" repeatCount="indefinite"/>
-            </circle>
-            <circle cx="750" cy="680" r="9" fill="#5a6bc0" opacity="0.8">
-                <animate attributeName="r" values="9;13;9" dur="3.2s" repeatCount="indefinite"/>
-                <animate attributeName="opacity" values="0.8;1;0.8" dur="3.2s" repeatCount="indefinite"/>
-            </circle>
-            <circle cx="950" cy="640" r="11" fill="#3da0da" opacity="0.9">
-                <animate attributeName="r" values="11;15;11" dur="4.8s" repeatCount="indefinite"/>
-                <animate attributeName="opacity" values="0.9;1;0.9" dur="4.8s" repeatCount="indefinite"/>
-            </circle>
-        </svg>
+        <canvas id="particleNetwork" class="hero-background"></canvas>
         
         <div class="hero-content">
-            <p class="hero-subtitle">*_*</p>
+            <p class="hero-tagline">CODE. DATA. INSIGHTS.</p>
             <h1 class="hero-greeting">Hi!</h1>
             <h2 class="hero-name">I am Ansel</h2>
             <p class="hero-title">Statistician & Software Engineer</p>
@@ -579,7 +470,8 @@
 
     <!-- Footer -->
     <footer class="site-footer">
-            <div class="container">
+        <div class="container">
+            <p class="footer-tagline">CODE. DATA. INSIGHTS.</p>
             <p>&copy; 2025 Ansel Melly. All rights reserved.</p>
             <p class="footer-credit">built with <a href="https://claude.ai" target="_blank" rel="noopener">claude.ai</a> :)</p>
         </div>
@@ -663,6 +555,158 @@
                 setTheme(e.matches ? 'dark' : 'light');
             }
         });
+
+        // Interactive Particle Network
+        (function() {
+            const canvas = document.getElementById('particleNetwork');
+            const ctx = canvas.getContext('2d');
+            const hero = document.querySelector('.hero');
+
+            let particles = [];
+            let mouse = { x: null, y: null, radius: 150 };
+
+            const colors = ['#4454a4', '#5a6bc0', '#3da0da'];
+            const particleCount = 80;
+            const connectionDistance = 150;
+            const mouseInfluence = 100;
+
+            function resize() {
+                canvas.width = hero.offsetWidth;
+                canvas.height = hero.offsetHeight;
+                initParticles();
+            }
+
+            function initParticles() {
+                particles = [];
+                for (let i = 0; i < particleCount; i++) {
+                    particles.push({
+                        x: Math.random() * canvas.width,
+                        y: Math.random() * canvas.height,
+                        vx: (Math.random() - 0.5) * 0.5,
+                        vy: (Math.random() - 0.5) * 0.5,
+                        radius: Math.random() * 3 + 2,
+                        color: colors[Math.floor(Math.random() * colors.length)],
+                        baseX: 0,
+                        baseY: 0
+                    });
+                    particles[i].baseX = particles[i].x;
+                    particles[i].baseY = particles[i].y;
+                }
+            }
+
+            function drawParticle(p) {
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+                ctx.fillStyle = p.color;
+                ctx.globalAlpha = 0.8;
+                ctx.fill();
+                ctx.globalAlpha = 1;
+            }
+
+            function drawConnections() {
+                for (let i = 0; i < particles.length; i++) {
+                    for (let j = i + 1; j < particles.length; j++) {
+                        const dx = particles[i].x - particles[j].x;
+                        const dy = particles[i].y - particles[j].y;
+                        const distance = Math.sqrt(dx * dx + dy * dy);
+
+                        if (distance < connectionDistance) {
+                            ctx.beginPath();
+                            ctx.moveTo(particles[i].x, particles[i].y);
+                            ctx.lineTo(particles[j].x, particles[j].y);
+                            ctx.strokeStyle = '#4454a4';
+                            ctx.globalAlpha = (1 - distance / connectionDistance) * 0.3;
+                            ctx.lineWidth = 1;
+                            ctx.stroke();
+                            ctx.globalAlpha = 1;
+                        }
+                    }
+                }
+            }
+
+            function drawMouseConnections() {
+                if (mouse.x === null) return;
+
+                for (let i = 0; i < particles.length; i++) {
+                    const dx = particles[i].x - mouse.x;
+                    const dy = particles[i].y - mouse.y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+
+                    if (distance < mouse.radius) {
+                        ctx.beginPath();
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(mouse.x, mouse.y);
+                        ctx.strokeStyle = '#3da0da';
+                        ctx.globalAlpha = (1 - distance / mouse.radius) * 0.5;
+                        ctx.lineWidth = 1;
+                        ctx.stroke();
+                        ctx.globalAlpha = 1;
+                    }
+                }
+            }
+
+            function updateParticles() {
+                for (let p of particles) {
+                    // Mouse repulsion
+                    if (mouse.x !== null) {
+                        const dx = p.x - mouse.x;
+                        const dy = p.y - mouse.y;
+                        const distance = Math.sqrt(dx * dx + dy * dy);
+
+                        if (distance < mouseInfluence) {
+                            const force = (mouseInfluence - distance) / mouseInfluence;
+                            const angle = Math.atan2(dy, dx);
+                            p.x += Math.cos(angle) * force * 2;
+                            p.y += Math.sin(angle) * force * 2;
+                        }
+                    }
+
+                    // Natural movement
+                    p.x += p.vx;
+                    p.y += p.vy;
+
+                    // Boundary bounce
+                    if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+                    if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+
+                    // Keep in bounds
+                    p.x = Math.max(0, Math.min(canvas.width, p.x));
+                    p.y = Math.max(0, Math.min(canvas.height, p.y));
+                }
+            }
+
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                drawConnections();
+                drawMouseConnections();
+
+                for (let p of particles) {
+                    drawParticle(p);
+                }
+
+                updateParticles();
+                requestAnimationFrame(animate);
+            }
+
+            // Event listeners
+            hero.addEventListener('mousemove', (e) => {
+                const rect = hero.getBoundingClientRect();
+                mouse.x = e.clientX - rect.left;
+                mouse.y = e.clientY - rect.top;
+            });
+
+            hero.addEventListener('mouseleave', () => {
+                mouse.x = null;
+                mouse.y = null;
+            });
+
+            window.addEventListener('resize', resize);
+
+            // Initialize
+            resize();
+            animate();
+        })();
     </script>
 </body>
 </html>
