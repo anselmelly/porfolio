@@ -54,8 +54,8 @@
         --color-text-light: #D1D5DB;
         --color-bg-primary: #111827;
         --color-bg-secondary: #1F2937;
-        --color-bg-card: #1F2937;
-        --color-border: #374151;
+        --color-bg-card: #374151;
+        --color-border: #4B5563;
         --color-gray-light: #1F2937;
         --color-gray-medium: #374151;
         --color-white: #F9FAFB;
@@ -68,8 +68,8 @@
     --color-text-light: #D1D5DB;
     --color-bg-primary: #111827;
     --color-bg-secondary: #1F2937;
-    --color-bg-card: #1F2937;
-    --color-border: #374151;
+    --color-bg-card: #374151;
+    --color-border: #4B5563;
     --color-gray-light: #1F2937;
     --color-gray-medium: #374151;
     --color-white: #F9FAFB;
@@ -594,8 +594,10 @@ p {
 }
 
 .about-image img {
-    width: 100%;
-    max-width: 300px;
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    object-position: top;
     border-radius: 50%;
     border: 4px solid var(--color-primary);
     box-shadow: 0 8px 24px rgba(79, 70, 229, 0.2);
@@ -751,11 +753,133 @@ p {
 }
 
 /* ===================================
+   Portfolio Section
+   =================================== */
+.portfolio {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--color-bg-secondary);
+}
+
+.portfolio h2 {
+    text-align: center;
+    margin-bottom: var(--spacing-sm);
+}
+
+.portfolio .section-subtitle {
+    text-align: center;
+    color: var(--color-text-muted);
+    margin-bottom: var(--spacing-lg);
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.portfolio-card {
+    position: relative;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    aspect-ratio: 16 / 10;
+    display: block;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.portfolio-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    transition: transform 0.3s ease;
+}
+
+.portfolio-card:hover img {
+    transform: scale(1.05);
+}
+
+.portfolio-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: var(--spacing-md);
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    color: white;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.portfolio-card:hover .portfolio-overlay {
+    transform: translateY(0);
+}
+
+.portfolio-overlay h4 {
+    margin: 0;
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+}
+
+/* ===================================
+   Clients Section
+   =================================== */
+.clients {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--color-bg-secondary);
+}
+
+.clients h2 {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.clients-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: var(--spacing-lg);
+    justify-items: center;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .clients-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.client-logo {
+    max-width: 120px;
+    transition: transform 0.3s ease;
+}
+
+.client-logo:hover {
+    transform: scale(1.1);
+}
+
+.client-logo img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.client-logo.light-logo {
+    background-color: #1F2937;
+    border-radius: var(--border-radius);
+    padding: var(--spacing-sm);
+}
+
+/* ===================================
    Tech Stack Section
    =================================== */
 .stack {
     padding: var(--spacing-xl) 0;
-    background-color: var(--color-bg-secondary);
+    background-color: var(--color-bg-primary);
 }
 
 .stack h2 {
@@ -784,7 +908,7 @@ p {
 }
 
 .stack-item {
-    background-color: var(--color-bg-card);
+    background-color: var(--color-bg-secondary);
     padding: var(--spacing-md);
     border-radius: var(--border-radius);
     text-align: center;
@@ -807,7 +931,7 @@ p {
    =================================== */
 .testimonials {
     padding: var(--spacing-xl) 0;
-    background-color: var(--color-bg-primary);
+    background-color: var(--color-bg-secondary);
 }
 
 .testimonials h2 {
@@ -828,7 +952,7 @@ p {
 }
 
 .testimonial-card {
-    background-color: var(--color-bg-secondary);
+    background-color: var(--color-bg-card);
     padding: var(--spacing-md);
     border-radius: var(--border-radius-lg);
     border: 2px solid var(--color-border);
@@ -888,7 +1012,7 @@ p {
    =================================== */
 .contact {
     padding: var(--spacing-xl) 0;
-    background-color: var(--color-bg-secondary);
+    background-color: var(--color-bg-primary);
 }
 
 .contact h2 {
@@ -993,18 +1117,18 @@ p {
     opacity: 1;
 }
 
-/* Footer in dark mode */
+/* Footer in dark mode - match navbar */
 :root[data-theme="dark"] .site-footer {
-    background-color: var(--color-dark);
+    background-color: var(--color-bg-primary);
     color: var(--color-white);
-    border-top-color: var(--color-dark-alt);
+    border-top-color: var(--color-border);
 }
 
 @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) .site-footer {
-        background-color: var(--color-dark);
+        background-color: var(--color-bg-primary);
         color: var(--color-white);
-        border-top-color: var(--color-dark-alt);
+        border-top-color: var(--color-border);
     }
 }
 
