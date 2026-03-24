@@ -1,0 +1,55 @@
+# Ansel Melly - Statistician & Software Engineer
+
+> Professional portfolio of Ansel Kipchumba Melly, a statistician and software engineer based in Kenya with 10+ years of experience.
+
+## About
+
+Ansel Melly is a statistician and software engineer specializing in:
+- Statistical analysis and data science (R, Python, SPSS, Stata, Excel)
+- Web development (PHP, Laravel, WordPress, JavaScript, MySQL)
+- API integration and system connectivity
+- Linux server administration and Git version control
+
+## Services
+
+### Statistical Services
+- Research design and methodology
+- Data analysis and interpretation
+- Statistical modeling and forecasting
+- Survey design and sampling
+
+### Data Science
+- Machine learning model development
+- Data visualization and reporting
+- Predictive analytics
+- Database management
+
+### Web Development
+- Custom web applications (Laravel/PHP)
+- WordPress development
+- Database design (MySQL)
+- API development and integration
+
+### Consulting
+- Data strategy consulting
+- IT consulting
+- System integration
+- Technical project management
+
+## Contact
+
+- Website: https://anselmelly.com
+- Email: Available on website
+- Location: Kenya
+
+## Portfolio
+
+Featured clients include government agencies, NGOs, and private sector organizations across East Africa.
+
+## Tech Stack
+
+### Data Science Tools
+R, Python, SPSS, Stata, Excel, SQL
+
+### Development Stack
+PHP, Laravel, WordPress, JavaScript, MySQL, Linux, Git, Claude AI

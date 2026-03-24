@@ -7,7 +7,9 @@
     
     <!-- SEO Meta Tags -->
     <meta name="description" content="Ansel Melly: Statistician & Software Engineer with 10+ years experience in statistical analysis, data science, and web development. Specializes in R, Python, Laravel, PHP, MySQL, and statistical modeling.">
+    <meta name="keywords" content="statistician, software engineer, data scientist, web developer, consultant, data consultant, IT consultant, R programming, Python, Laravel, PHP, MySQL, statistical analysis, data analysis, Kenya, Nairobi, SPSS, Stata, Excel, API integration, WordPress, freelance developer">
     <meta name="author" content="Ansel Kipchumba Melly">
+    <meta name="robots" content="index, follow">
     <meta name="google-site-verification" content="w1gewQK3moI5ZcbPmKPglTV6VV6jpXXs_F0_d65xeTU">
     
     <!-- Open Graph / Facebook -->
@@ -34,7 +36,15 @@
     <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://www.google-analytics.com">
     <link rel="preconnect" href="https://www.googletagmanager.com">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Devicon for tech stack icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
     <title>Ansel Melly | Statistician & Software Engineer</title>
     <link rel="stylesheet" href="styles.css">
 
@@ -280,11 +290,11 @@
                     <article class="service-card">
                         <div class="service-icon">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/>
+                                <path d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
                             </svg>
                         </div>
-                        <h4>Payment System Integration</h4>
-                        <p>Integrate secure payment gateways including M-Pesa, Pesapal, and DPO. Proven experience processing $2M+ monthly transactions.</p>
+                        <h4>API Integration</h4>
+                        <p>Connect your systems with third-party services including payment gateways, SMS providers, and external platforms. Experienced in M-Pesa, Pesapal, and custom API solutions.</p>
                     </article>
 
                     <article class="service-card">
@@ -371,10 +381,10 @@
                     </div>
                 </a>
 
-                <a href="https://sigumusic.com/" target="_blank" rel="noopener" class="portfolio-card">
-                    <img src="assets/showcase/sigu_musi.png" alt="Sigu Music" loading="lazy">
+                <a href="https://rsk.or.ke/" target="_blank" rel="noopener" class="portfolio-card">
+                    <img src="assets/showcase/rsk.png" alt="RSK" loading="lazy">
                     <div class="portfolio-overlay">
-                        <h4>Sigu Music</h4>
+                        <h4>RSK</h4>
                     </div>
                 </a>
 
@@ -404,18 +414,27 @@
                 <h3>Statistical & Data Science Tools</h3>
                 <div class="stack-grid">
                     <div class="stack-item">
+                        <i class="devicon-r-plain"></i>
                         <span>R</span>
                     </div>
                     <div class="stack-item">
+                        <i class="devicon-python-plain"></i>
                         <span>Python</span>
                     </div>
                     <div class="stack-item">
+                        <i class="devicon-spss-plain"></i>
                         <span>SPSS</span>
                     </div>
                     <div class="stack-item">
+                        <i class="devicon-stata-original-wordmark"></i>
                         <span>Stata</span>
                     </div>
                     <div class="stack-item">
+                        <span class="stack-letter">Ex</span>
+                        <span>Excel</span>
+                    </div>
+                    <div class="stack-item">
+                        <i class="devicon-azuresqldatabase-plain"></i>
                         <span>SQL</span>
                     </div>
                 </div>
@@ -425,31 +444,36 @@
                 <h3>Development Stack</h3>
                 <div class="stack-grid">
                     <div class="stack-item">
-                        <span>Laravel</span>
-                    </div>
-                    <div class="stack-item">
+                        <i class="devicon-php-plain"></i>
                         <span>PHP</span>
                     </div>
                     <div class="stack-item">
-                        <span>MySQL</span>
+                        <i class="devicon-laravel-original"></i>
+                        <span>Laravel</span>
                     </div>
                     <div class="stack-item">
+                        <i class="devicon-wordpress-plain"></i>
                         <span>WordPress</span>
                     </div>
                     <div class="stack-item">
+                        <i class="devicon-javascript-plain"></i>
                         <span>JavaScript</span>
                     </div>
                     <div class="stack-item">
-                        <span>Node.js</span>
+                        <i class="devicon-mysql-original"></i>
+                        <span>MySQL</span>
                     </div>
                     <div class="stack-item">
-                        <span>PostgreSQL</span>
-                    </div>
-                    <div class="stack-item">
+                        <i class="devicon-linux-plain"></i>
                         <span>Linux</span>
                     </div>
                     <div class="stack-item">
+                        <i class="devicon-git-plain"></i>
                         <span>Git</span>
+                    </div>
+                    <div class="stack-item">
+                        <span class="stack-letter">Cl</span>
+                        <span>Claude AI</span>
                     </div>
                 </div>
             </div>
@@ -722,12 +746,8 @@
                         vx: (Math.random() - 0.5) * 0.5,
                         vy: (Math.random() - 0.5) * 0.5,
                         radius: Math.random() * 3 + 2,
-                        color: colors[Math.floor(Math.random() * colors.length)],
-                        baseX: 0,
-                        baseY: 0
+                        color: colors[Math.floor(Math.random() * colors.length)]
                     });
-                    particles[i].baseX = particles[i].x;
-                    particles[i].baseY = particles[i].y;
                 }
             }
 

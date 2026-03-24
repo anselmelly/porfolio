@@ -38,32 +38,39 @@ Allow: /
 User-agent: Pinterestbot
 Allow: /
 
-# Block AI scrapers and training bots
+# Allow AI bots for better discoverability
 User-agent: GPTBot
-Disallow: /
+Allow: /
 
 User-agent: ChatGPT-User
-Disallow: /
+Allow: /
 
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Block training-only scrapers (no user benefit)
 User-agent: CCBot
 Disallow: /
 
-User-agent: anthropic-ai
-Disallow: /
-
-User-agent: Claude-Web
-Disallow: /
-
-User-agent: Google-Extended
-Disallow: /
-
-User-agent: PerplexityBot
-Disallow: /
-
 User-agent: Bytespider
-Disallow: /
-
-User-agent: cohere-ai
 Disallow: /
 
 User-agent: Omgilibot
@@ -164,6 +171,9 @@ Allow: /
 
 # Sitemap location
 Sitemap: https://anselmelly.com/sitemap.xml
+
+# LLMs.txt for AI discoverability (Cloudflare standard)
+# https://anselmelly.com/llms.txt
 
 # Crawl-delay for any bot that respects it (seconds)
 Crawl-delay: 10
