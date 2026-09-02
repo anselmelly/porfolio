@@ -17,7 +17,7 @@ Personal portfolio website for Ansel Melly - Statistician & Software Engineer.
 
 - Responsive design with dark/light mode support
 - Interactive hero section with particle network
-- Services showcase
+- Consultancy showcase
 - Portfolio/client gallery
 - Tech stack display with icons
 - Testimonials section

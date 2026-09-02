@@ -10,7 +10,9 @@ Ansel Melly is a statistician and software engineer specializing in:
 - API integration and system connectivity
 - Linux server administration and Git version control
 
-## Services
+BSc Statistics & Economics. Currently pursuing MSc Data Science & Analytics (in progress).
+
+## Consultancy
 
 ### Statistical Services
 - Research design and methodology
