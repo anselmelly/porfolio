@@ -1,8 +1,103 @@
 [
   {
-    "slug": "hello-tech",
-    "title": "Why I Still Write Raw SQL",
-    "date": "2026-09-02",
-    "excerpt": "ORMs handle the boring 80% fine. The moment a query needs real aggregation or a five-table join, dropping to raw SQL beats fighting the query builder."
+    "slug": "the-gig-economy-a-consultants-honest-take",
+    "title": "The Gig Economy: A Consultant's Honest Take",
+    "date": "2026-03-24",
+    "excerpt": "I've been in IT consultancy for over 10 years. The gig economy didn't just find me \u2014 I built my way into it, one skill and one trusted relationship at a time. Here's what I've learned about how it actually works.",
+    "category": "tech",
+    "tags": [
+      "gig economy",
+      "freelancing",
+      "consulting",
+      "IT",
+      "networking",
+      "career independent",
+      "contractor skills"
+    ],
+    "readTime": "4 min"
+  },
+  {
+    "slug": "why-i-rewrote-the-cohort-triangle-query-again",
+    "title": "Why I Rewrote the Cohort Triangle Query (Again)",
+    "date": "2026-03-12",
+    "excerpt": "Third time's the charm \u2014 or so I told myself. The full story of why a \"simple\" retention report turned into a two-week CTE rabbit hole.",
+    "category": "tech",
+    "tags": [
+      "sql",
+      "mariadb",
+      "laravel",
+      "analytics"
+    ],
+    "readTime": "6 min"
+  },
+  {
+    "slug": "building-phoebe-a-cve-intelligence-platform-from-scratch",
+    "title": "Building Phoebe: A CVE Intelligence Platform from Scratch",
+    "date": "2026-03-05",
+    "excerpt": "How I went from a weekend idea to a running Laravel job queue fetching NVD, EPSS, and CISA KEV data nightly \u2014 and why batch processing changed everything.",
+    "category": "build",
+    "tags": [
+      "laravel",
+      "security",
+      "php",
+      "queues"
+    ],
+    "readTime": "8 min"
+  },
+  {
+    "slug": "the-problem-with-how-african-developers-price-their-work",
+    "title": "The Problem with How African Developers Price Their Work",
+    "date": "2026-02-28",
+    "excerpt": "We underprice because we compare to local market rates, not the value we deliver. A rant that turned into a framework I actually use now.",
+    "category": "rant",
+    "tags": [
+      "business",
+      "africa",
+      "consulting",
+      "pricing"
+    ],
+    "readTime": "4 min"
+  },
+  {
+    "slug": "on-doing-an-msc-while-running-a-consulting-business",
+    "title": "On Doing an MSc While Running a Consulting Business",
+    "date": "2026-02-20",
+    "excerpt": "Strathmore starts in May. I'm already building systems to make this work without burning out. Here's what I'm putting in place.",
+    "category": "life",
+    "tags": [
+      "study",
+      "consulting",
+      "strathmore",
+      "life"
+    ],
+    "readTime": "5 min"
+  },
+  {
+    "slug": "laravel-httppool-is-underrated-for-batch-api-calls",
+    "title": "Laravel Http::pool() is Underrated for Batch API Calls",
+    "date": "2026-02-14",
+    "excerpt": "I replaced 80 sequential HTTP requests with a single pool call. The performance difference was embarrassing. Notes on how it works and where it breaks.",
+    "category": "tech",
+    "tags": [
+      "laravel",
+      "php",
+      "http",
+      "performance"
+    ],
+    "readTime": "5 min"
+  },
+  {
+    "slug": "nairobi-traffic-has-made-me-a-better-systems-thinker",
+    "title": "Nairobi Traffic Has Made Me a Better Systems Thinker",
+    "date": "2026-01-30",
+    "excerpt": "Sat in Mombasa Road for 2 hours last Tuesday. Had no choice but to think. Wrote four pages of notes. This post is the interesting parts.",
+    "category": "rant",
+    "tags": [
+      "nairobi",
+      "life",
+      "systems",
+      "thinking"
+    ],
+    "readTime": "3 min"
   }
 ]

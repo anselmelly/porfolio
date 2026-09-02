@@ -67,6 +67,7 @@
             <article id="postContent" class="post-content">
                 <p class="contact-intro">Loading...</p>
             </article>
+            <nav id="postNav" class="post-nav"></nav>
         </div>
     </section>
 
@@ -104,21 +105,35 @@
             fetch('posts/index.json')
                 .then(res => res.json())
                 .then(posts => {
-                    const post = posts.find(p => p.slug === slug);
+                    posts.sort((a, b) => new Date(b.date) - new Date(a.date));
+                    const idx = posts.findIndex(p => p.slug === slug);
+                    const post = posts[idx];
                     if (!post) {
                         contentEl.innerHTML = '<p class="contact-intro">Post not found.</p>';
                         return;
                     }
                     document.getElementById('pageTitle').textContent = post.title + ' | Ansel Melly';
+
+                    const newer = idx > 0 ? posts[idx - 1] : null;
+                    const older = idx < posts.length - 1 ? posts[idx + 1] : null;
+                    const navEl = document.getElementById('postNav');
+                    navEl.innerHTML = `
+                        ${older ? `<a class="post-nav-link post-nav-prev" href="post?slug=${encodeURIComponent(older.slug)}"><span class="post-nav-label">&larr; Older</span><span class="post-nav-title">${older.title}</span></a>` : '<span></span>'}
+                        ${newer ? `<a class="post-nav-link post-nav-next" href="post?slug=${encodeURIComponent(newer.slug)}"><span class="post-nav-label">Newer &rarr;</span><span class="post-nav-title">${newer.title}</span></a>` : '<span></span>'}
+                    `;
+
                     return fetch(`posts/${slug}.md`)
                         .then(res => {
                             if (!res.ok) throw new Error('not found');
                             return res.text();
                         })
-                        .then(md => {
+                        .then(raw => {
                             const dateStr = new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
-                            const md_ = window.markdownit();
-                            contentEl.innerHTML = `<p class="blog-card-date">${dateStr}</p>` + md_.render(md);
+                            const rendered = window.markdownit().render(raw);
+                            const meta = post.readTime ? `${dateStr} &middot; ${post.readTime} read` : dateStr;
+                            const category = post.category ? `<span class="blog-card-category">${post.category}</span>` : '';
+                            const tags = (post.tags || []).map(t => `<span class="blog-card-tag">${t}</span>`).join('');
+                            contentEl.innerHTML = `<div class="blog-card-meta">${category}<span class="blog-card-date">${meta}</span></div><h1 class="post-title">${post.title}</h1>` + rendered + `<div class="blog-card-tags">${tags}</div>`;
                         });
                 })
                 .catch(() => {

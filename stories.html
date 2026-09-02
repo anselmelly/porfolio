@@ -103,13 +103,23 @@
                     list.innerHTML = '<p class="contact-intro">No posts yet.</p>';
                     return;
                 }
-                list.innerHTML = posts.map(post => `
+                list.innerHTML = posts.map(post => {
+                    const dateStr = new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+                    const meta = post.readTime ? `${dateStr} &middot; ${post.readTime} read` : dateStr;
+                    const category = post.category ? `<span class="blog-card-category">${post.category}</span>` : '';
+                    const tags = (post.tags || []).map(t => `<span class="blog-card-tag">${t}</span>`).join('');
+                    return `
                     <a class="blog-card" href="post?slug=${encodeURIComponent(post.slug)}">
-                        <span class="blog-card-date">${new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+                        <div class="blog-card-meta">
+                            ${category}
+                            <span class="blog-card-date">${meta}</span>
+                        </div>
                         <h3>${post.title}</h3>
                         <p>${post.excerpt}</p>
+                        <div class="blog-card-tags">${tags}</div>
                     </a>
-                `).join('');
+                `;
+                }).join('');
             })
             .catch(() => {
                 document.getElementById('postList').innerHTML = '<p class="contact-intro">Could not load posts.</p>';
