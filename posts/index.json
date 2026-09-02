@@ -1,0 +1,8 @@
+[
+  {
+    "slug": "hello-tech",
+    "title": "Why I Still Write Raw SQL",
+    "date": "2026-09-02",
+    "excerpt": "ORMs handle the boring 80% fine. The moment a query needs real aggregation or a five-table join, dropping to raw SQL beats fighting the query builder."
+  }
+]

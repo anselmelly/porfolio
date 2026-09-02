@@ -622,6 +622,116 @@ p {
 }
 
 /* ===================================
+   Stories
+   =================================== */
+.stories {
+    margin-top: 80px;
+    padding: var(--spacing-lg) 0 var(--spacing-xl);
+}
+
+.stories h2 {
+    margin-bottom: var(--spacing-md);
+}
+
+.stories-intro {
+    margin: 0 0 var(--spacing-lg);
+}
+
+.blog-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-card {
+    display: block;
+    padding: var(--spacing-lg);
+    margin: 0 calc(-1 * var(--spacing-lg));
+    border-bottom: 1px solid var(--color-border);
+    text-decoration: none;
+    transition: var(--transition-base);
+}
+
+.blog-list .blog-card:last-child {
+    border-bottom: none;
+}
+
+.blog-card:hover {
+    background-color: var(--color-bg-secondary);
+}
+
+.blog-card-date {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+    margin-bottom: var(--spacing-xs);
+}
+
+.blog-card h3 {
+    margin: 0 0 var(--spacing-xs);
+    color: var(--color-text);
+    transition: var(--transition-base);
+}
+
+.blog-card p {
+    color: var(--color-text-light);
+    font-size: var(--font-size-base);
+    margin: 0;
+}
+
+.post-back {
+    display: inline-block;
+    margin-bottom: var(--spacing-lg);
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.post-back:hover {
+    text-decoration: underline;
+}
+
+.post-content {
+    color: var(--color-text-light);
+    font-size: var(--font-size-lg);
+    line-height: 1.8;
+}
+
+.post-content h1,
+.post-content h2,
+.post-content h3 {
+    color: var(--color-text);
+    margin-top: var(--spacing-lg);
+}
+
+.post-content code {
+    background-color: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    padding: 0.15em 0.4em;
+    font-family: var(--font-mono, monospace);
+    font-size: 0.9em;
+}
+
+.post-content pre {
+    background-color: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-md);
+    overflow-x: auto;
+}
+
+.post-content pre code {
+    border: none;
+    background: none;
+    padding: 0;
+}
+
+.post-content ul,
+.post-content ol {
+    padding-left: 1.5em;
+}
+
+/* ===================================
    Stats Section
    =================================== */
 .stats {
