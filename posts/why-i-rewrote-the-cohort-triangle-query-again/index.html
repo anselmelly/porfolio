@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+
+    <meta name="description" content="Third time&#39;s the charm — or so I told myself. The full story of why a &quot;simple&quot; retention report turned into a two-week CTE rabbit hole.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://anselmelly.com/posts/why-i-rewrote-the-cohort-triangle-query-again/">
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://anselmelly.com/posts/why-i-rewrote-the-cohort-triangle-query-again/">
+    <meta property="og:title" content="Why I Rewrote the Cohort Triangle Query (Again) | Ansel Melly">
+    <meta property="og:description" content="Third time&#39;s the charm — or so I told myself. The full story of why a &quot;simple&quot; retention report turned into a two-week CTE rabbit hole.">
+    <meta property="og:image" content="https://anselmelly.com/assets/logo.png">
+    <meta property="article:published_time" content="2026-03-12">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://anselmelly.com/posts/why-i-rewrote-the-cohort-triangle-query-again/">
+    <meta name="twitter:title" content="Why I Rewrote the Cohort Triangle Query (Again) | Ansel Melly">
+    <meta name="twitter:description" content="Third time&#39;s the charm — or so I told myself. The full story of why a &quot;simple&quot; retention report turned into a two-week CTE rabbit hole.">
+    <meta name="twitter:image" content="https://anselmelly.com/assets/logo.png">
+    <meta name="twitter:creator" content="@anselmelly">
+
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAAcfAAAHHwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACZVUQPpEk3DgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANqbOCnYnjpCAAAAAAAAAAAAAAAAAAAAAAAAAACZMzMFolFCVQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADaoDye2qA9/wAAAAAAAAAAAAAAAAAAAAAAAAAApFJDhqVLPBHWnDosAAAAAAAAAADYnTsN45w5EgAAAAAAAAAA2qA8ntqgPf8AAAAAAAAAAAAAAAAAAAAAo1NEdaVRRF7Xnzkt2aA8vgAAAAC/fwAE2qA8ydmfPefXoTYTAAAAANqgPJ7aoD3/AAAAAAAAAAAAAAAApFJCUaNTQ78AAAAB2qA9xtqfPMgAAAAA2p48fNqgPfjaoDzk2qA8pgAAAADaoTyd2qA9/wAAAAAAAAAAolFALKNTQ++iUUAsAAAAANqgPNTanzzH2Z08L9qgPPnaoDx72KI6QtqgPP3anztS2aA8nNqgPf8AAAAAAAAAAKRTQ8GiUkJwAAAAAAAAAADaoDzU2qA8x9ugPMvboDzLv39ABAAAAADaoDuW2Z8959mfPKraoD3/AAAAAKNTQlmkU0SipFNDo6RSRFoAAAAA2qA81NqgPfzanz343Jw6LAAAAAClU0OQqVpCl9qgPd7aoD382qA9/6JGRgukU0KEAAAAAaRTQ76kVETomUwzCtqgPNTaoD3/2KA8ewAAAACkVEJGpFRE/6JTRHHYnjpC2qA8/dqgPf+hUUA8v0BABAAAAACjVERApFND/qRTQ7u2bkHvuHBB/aRWQ5iiU0E3pFNDv6RUROiZTDMKAAAAANufPE3bnzxiqlVVAwAAAAAAAAAAAAAAAKRTQ8GkU0P+pFNDn6JTQ26ZREQPo1RCOqRTQ/6jU0R1AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAChUkNEpFND/qFTRGIAAAAAAAAAAKRUQ7SkVEPrlVVADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKNTQ8WkVEPYfwAAAqFTRDGkU0P+o1RDegAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAClU0FHpFRE/6RSQ1ejVEOqpFRE7aRJNw4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKRUQ8mjVEThpFRE/KRTQ34AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/PwAAPn8AAD4zAAA8IQAAOCEAADEAAAAzBAAAIQgAAAAQAAAIAQAAHAPAADxjwAA+B8AAPgfAAD8PwAA/D8AAA==">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <title>Why I Rewrote the Cohort Triangle Query (Again) | Ansel Melly</title>
+    <link rel="stylesheet" href="/styles.css">
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Why I Rewrote the Cohort Triangle Query (Again)",
+  "description": "Third time's the charm — or so I told myself. The full story of why a \"simple\" retention report turned into a two-week CTE rabbit hole.",
+  "datePublished": "2026-03-12",
+  "dateModified": "2026-03-12",
+  "url": "https://anselmelly.com/posts/why-i-rewrote-the-cohort-triangle-query-again/",
+  "author": {
+    "@type": "Person",
+    "name": "Ansel Kipchumba Melly",
+    "url": "https://anselmelly.com"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Ansel Kipchumba Melly"
+  },
+  "image": "https://anselmelly.com/assets/logo.png",
+  "keywords": "sql, mariadb, laravel, analytics"
+}
+    </script>
+</head>
+<body>
+    <header class="site-header">
+        <nav class="nav-container">
+            <div class="logo">
+                <a href="/#home">
+                    <img src="/assets/logo.png" alt="Ansel Melly Logo">
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/#about">About</a></li>
+                <li><a href="/#services">Consultancy</a></li>
+                <li><a href="/#portfolio">Portfolio</a></li>
+                <li><a href="/#stack">Stack</a></li>
+                <li><a href="/#testimonials">Testimonials</a></li>
+                <li><a href="/#contact">Contact</a></li>
+                <li><a href="/stories" class="active">Stories</a></li>
+            </ul>
+            <div class="nav-right">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                    <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"/>
+                        <line x1="12" y1="1" x2="12" y2="3"/>
+                        <line x1="12" y1="21" x2="12" y2="23"/>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                        <line x1="1" y1="12" x2="3" y2="12"/>
+                        <line x1="21" y1="12" x2="23" y2="12"/>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                    </svg>
+                    <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                    </svg>
+                </button>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <section class="stories">
+        <div class="container">
+            <a href="/stories" class="post-back">&larr; Back to Stories</a>
+            <article id="postContent" class="post-content"><div class="blog-card-meta"><span class="blog-card-category">tech</span><span class="blog-card-date">March 12, 2026 &middot; 6 min read</span></div><h1 class="post-title">Why I Rewrote the Cohort Triangle Query (Again)</h1><h2>The background</h2>
+<p>Every codebase has that one feature. The one that looks simple in a product spec, turns monstrous in production data, and develops a mythology in the commit history. For SavvyCFO, that feature is the subscription cohort triangle.</p>
+<p>This post is not a tutorial. It's a post-mortem and a confession. I've now rewritten this query architecture three times in eight months, and I think — <em>think</em> — I've finally got it right.</p>
+<h2>What broke</h2>
+<h3>Zero pollution</h3>
+<p>The first version worked until a client had a month with zero new subscribers. The query simply skipped that month — no row in the output. The frontend rendered a shifted triangle that made it look like a great retention month had appeared from nowhere.</p>
+<p>The fix everyone reaches for first is <code>COALESCE</code> with a <code>LEFT JOIN</code> against a calendar table. And that works, until your calendar table doesn't cover a client's date range, or the <code>LEFT JOIN</code> explodes your row count because you didn't filter correctly. I made both mistakes.</p>
+<h3>Dual sequencing</h3>
+<p>The second problem was sequencing. I needed two different sequences on the same dataset: <code>seq</code> (position of this month in the cohort's timeline) and <code>payment_sequence</code> (the nth payment this subscriber has made). They sound similar. They are not the same.</p>
+<h2>The fix</h2>
+<p>The final architecture uses a <strong>dynamic month generator CTE</strong> at the top of the query chain. It produces every month in the analysis window regardless of whether any data exists for that month.</p>
+<blockquote>
+<p>The database will never tell you a row is missing. It will simply not include it, and let you assume everything is fine.</p>
+</blockquote>
+<h2>What I learned</h2>
+<ul>
+<li><strong>Validate shape, not just values.</strong> A test that checks &quot;month 3 retention is between 60–95%&quot; will pass even when the month numbering is off by one.</li>
+<li><strong>The month generator belongs in a seed table.</strong> Generating it inline in a CTE is clever but fragile.</li>
+<li><strong>MariaDB's optimizer is not MySQL's optimizer.</strong> Query hints that work on one will silently degrade on the other.</li>
+</ul>
+<div class="blog-card-tags"><span class="blog-card-tag">sql</span><span class="blog-card-tag">mariadb</span><span class="blog-card-tag">laravel</span><span class="blog-card-tag">analytics</span></div></article>
+            <nav id="postNav" class="post-nav">
+        <a class="post-nav-link post-nav-prev" href="/posts/building-phoebe-a-cve-intelligence-platform-from-scratch/"><span class="post-nav-label">&larr; Older</span><span class="post-nav-title">Building Phoebe: A CVE Intelligence Platform from Scratch</span></a>
+        <a class="post-nav-link post-nav-next" href="/posts/the-gig-economy-a-consultants-honest-take/"><span class="post-nav-label">Newer &rarr;</span><span class="post-nav-title">The Gig Economy: A Consultant&#39;s Honest Take</span></a>
+    </nav>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p class="footer-tagline">CODE. DATA. INSIGHTS.</p>
+            <div class="footer-contact">
+                <div class="footer-contact-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                    </svg>
+                    <span>+254 (0) 723 603314</span>
+                </div>
+                <div class="footer-contact-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                    </svg>
+                    <a href="mailto:ansel@anselmelly.com">ansel@anselmelly.com</a>
+                </div>
+            </div>
+            <p>&copy; <span id="currentYear"></span> Ansel Melly. All rights reserved.</p>
+            <p class="footer-credit">built with <a href="https://claude.ai" target="_blank" rel="noopener">claude.ai</a> :)</p>
+        </div>
+    </footer>
+
+    <script src="/header.js"></script>
+</body>
+</html>

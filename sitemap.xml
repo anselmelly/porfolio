@@ -9,47 +9,12 @@
 		<changefreq>monthly</changefreq>
 		<priority>1.0</priority>
 	</url>
-	<!--  About Section  -->
+	<!--  Stories  -->
 	<url>
-		<loc>https://anselmelly.com/#about</loc>
+		<loc>https://anselmelly.com/stories/</loc>
 		<lastmod>2026-09-02</lastmod>
-		<changefreq>monthly</changefreq>
+		<changefreq>weekly</changefreq>
 		<priority>0.8</priority>
-	</url>
-	<!--  Consultancy Section  -->
-	<url>
-		<loc>https://anselmelly.com/#services</loc>
-		<lastmod>2026-09-02</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.8</priority>
-	</url>
-	<!--  Portfolio Section  -->
-	<url>
-		<loc>https://anselmelly.com/#portfolio</loc>
-		<lastmod>2026-09-02</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.8</priority>
-	</url>
-	<!--  Stack Section  -->
-	<url>
-		<loc>https://anselmelly.com/#stack</loc>
-		<lastmod>2026-09-02</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.7</priority>
-	</url>
-	<!--  Testimonials Section  -->
-	<url>
-		<loc>https://anselmelly.com/#testimonials</loc>
-		<lastmod>2026-09-02</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.7</priority>
-	</url>
-	<!--  Contact Section  -->
-	<url>
-		<loc>https://anselmelly.com/#contact</loc>
-		<lastmod>2026-09-02</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.9</priority>
 	</url>
 	<!--  Resume/CV  -->
 	<url>
@@ -57,5 +22,48 @@
 		<lastmod>2026-09-02</lastmod>
 		<changefreq>yearly</changefreq>
 		<priority>0.6</priority>
+	</url>
+	<!-- Blog Posts -->
+	<url>
+		<loc>https://anselmelly.com/posts/the-gig-economy-a-consultants-honest-take/</loc>
+		<lastmod>2026-03-24</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.7</priority>
+	</url>
+	<url>
+		<loc>https://anselmelly.com/posts/why-i-rewrote-the-cohort-triangle-query-again/</loc>
+		<lastmod>2026-03-12</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.7</priority>
+	</url>
+	<url>
+		<loc>https://anselmelly.com/posts/building-phoebe-a-cve-intelligence-platform-from-scratch/</loc>
+		<lastmod>2026-03-05</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.7</priority>
+	</url>
+	<url>
+		<loc>https://anselmelly.com/posts/the-problem-with-how-african-developers-price-their-work/</loc>
+		<lastmod>2026-02-28</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.7</priority>
+	</url>
+	<url>
+		<loc>https://anselmelly.com/posts/on-doing-an-msc-while-running-a-consulting-business/</loc>
+		<lastmod>2026-02-20</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.7</priority>
+	</url>
+	<url>
+		<loc>https://anselmelly.com/posts/laravel-httppool-is-underrated-for-batch-api-calls/</loc>
+		<lastmod>2026-02-14</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.7</priority>
+	</url>
+	<url>
+		<loc>https://anselmelly.com/posts/nairobi-traffic-has-made-me-a-better-systems-thinker/</loc>
+		<lastmod>2026-01-30</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.7</priority>
 	</url>
 </urlset>

@@ -1,7 +1,13 @@
 {
   "name": "anselmelly.com",
   "private": true,
+  "scripts": {
+    "build": "node build-posts.js",
+    "dev": "wrangler dev --port 8934",
+    "deploy": "npm run build && wrangler deploy"
+  },
   "devDependencies": {
+    "markdown-it": "^13.0.2",
     "wrangler": "^4.128.0"
   }
 }
