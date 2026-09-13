@@ -1,5 +1,21 @@
 [
   {
+    "slug": "impactmetrik-the-three-year-vibecoded-build",
+    "title": "ImpactMetrik: A Three-Year, Vibecoded Build",
+    "date": "2026-09-13",
+    "excerpt": "In December I set out to build an M&E platform of my own — not another client project. This is the first post in a series about that build: why it starts with a survey tool, why the series spans three years, and why it's being vibecoded from A to Z.",
+    "category": "build",
+    "tags": [
+      "impactmetrik",
+      "m&e",
+      "startup",
+      "vibecoding",
+      "ai",
+      "building in public"
+    ],
+    "readTime": "3 min"
+  },
+  {
     "slug": "the-gig-economy-a-consultants-honest-take",
     "title": "The Gig Economy: A Consultant's Honest Take",
     "date": "2026-03-24",

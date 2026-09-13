@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+
+    <meta name="description" content="In December I set out to build an M&amp;E platform of my own — not another client project. This is the first post in a series about that build: why it starts with a survey tool, why the series spans three years, and why it&#39;s being vibecoded from A to Z.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://anselmelly.com/stories/impactmetrik-the-three-year-vibecoded-build/">
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://anselmelly.com/stories/impactmetrik-the-three-year-vibecoded-build/">
+    <meta property="og:title" content="ImpactMetrik: A Three-Year, Vibecoded Build | Ansel Melly">
+    <meta property="og:description" content="In December I set out to build an M&amp;E platform of my own — not another client project. This is the first post in a series about that build: why it starts with a survey tool, why the series spans three years, and why it&#39;s being vibecoded from A to Z.">
+    <meta property="og:image" content="https://anselmelly.com/assets/logo.png">
+    <meta property="article:published_time" content="2026-09-13">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://anselmelly.com/stories/impactmetrik-the-three-year-vibecoded-build/">
+    <meta name="twitter:title" content="ImpactMetrik: A Three-Year, Vibecoded Build | Ansel Melly">
+    <meta name="twitter:description" content="In December I set out to build an M&amp;E platform of my own — not another client project. This is the first post in a series about that build: why it starts with a survey tool, why the series spans three years, and why it&#39;s being vibecoded from A to Z.">
+    <meta name="twitter:image" content="https://anselmelly.com/assets/logo.png">
+    <meta name="twitter:creator" content="@anselmelly">
+
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAAcfAAAHHwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACZVUQPpEk3DgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANqbOCnYnjpCAAAAAAAAAAAAAAAAAAAAAAAAAACZMzMFolFCVQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADaoDye2qA9/wAAAAAAAAAAAAAAAAAAAAAAAAAApFJDhqVLPBHWnDosAAAAAAAAAADYnTsN45w5EgAAAAAAAAAA2qA8ntqgPf8AAAAAAAAAAAAAAAAAAAAAo1NEdaVRRF7Xnzkt2aA8vgAAAAC/fwAE2qA8ydmfPefXoTYTAAAAANqgPJ7aoD3/AAAAAAAAAAAAAAAApFJCUaNTQ78AAAAB2qA9xtqfPMgAAAAA2p48fNqgPfjaoDzk2qA8pgAAAADaoTyd2qA9/wAAAAAAAAAAolFALKNTQ++iUUAsAAAAANqgPNTanzzH2Z08L9qgPPnaoDx72KI6QtqgPP3anztS2aA8nNqgPf8AAAAAAAAAAKRTQ8GiUkJwAAAAAAAAAADaoDzU2qA8x9ugPMvboDzLv39ABAAAAADaoDuW2Z8959mfPKraoD3/AAAAAKNTQlmkU0SipFNDo6RSRFoAAAAA2qA81NqgPfzanz343Jw6LAAAAAClU0OQqVpCl9qgPd7aoD382qA9/6JGRgukU0KEAAAAAaRTQ76kVETomUwzCtqgPNTaoD3/2KA8ewAAAACkVEJGpFRE/6JTRHHYnjpC2qA8/dqgPf+hUUA8v0BABAAAAACjVERApFND/qRTQ7u2bkHvuHBB/aRWQ5iiU0E3pFNDv6RUROiZTDMKAAAAANufPE3bnzxiqlVVAwAAAAAAAAAAAAAAAKRTQ8GkU0P+pFNDn6JTQ26ZREQPo1RCOqRTQ/6jU0R1AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAChUkNEpFND/qFTRGIAAAAAAAAAAKRUQ7SkVEPrlVVADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKNTQ8WkVEPYfwAAAqFTRDGkU0P+o1RDegAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAClU0FHpFRE/6RSQ1ejVEOqpFRE7aRJNw4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKRUQ8mjVEThpFRE/KRTQ34AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/PwAAPn8AAD4zAAA8IQAAOCEAADEAAAAzBAAAIQgAAAAQAAAIAQAAHAPAADxjwAA+B8AAPgfAAD8PwAA/D8AAA==">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <title>ImpactMetrik: A Three-Year, Vibecoded Build | Ansel Melly</title>
+    <link rel="stylesheet" href="/styles.css">
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "ImpactMetrik: A Three-Year, Vibecoded Build",
+  "description": "In December I set out to build an M&E platform of my own — not another client project. This is the first post in a series about that build: why it starts with a survey tool, why the series spans three years, and why it's being vibecoded from A to Z.",
+  "datePublished": "2026-09-13",
+  "dateModified": "2026-09-13",
+  "url": "https://anselmelly.com/stories/impactmetrik-the-three-year-vibecoded-build/",
+  "author": {
+    "@type": "Person",
+    "name": "Ansel Kipchumba Melly",
+    "url": "https://anselmelly.com"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Ansel Kipchumba Melly"
+  },
+  "image": "https://anselmelly.com/assets/logo.png",
+  "keywords": "impactmetrik, m&e, startup, vibecoding, ai, building in public"
+}
+    </script>
+</head>
+<body>
+    <header class="site-header">
+        <nav class="nav-container">
+            <div class="logo">
+                <a href="/#home">
+                    <img src="/assets/logo.png" alt="Ansel Melly Logo">
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/#about">About</a></li>
+                <li><a href="/#services">Consultancy</a></li>
+                <li><a href="/#portfolio">Portfolio</a></li>
+                <li><a href="/#stack">Stack</a></li>
+                <li><a href="/#testimonials">Testimonials</a></li>
+                <li><a href="/#contact">Contact</a></li>
+                <li><a href="/stories" class="active">Stories</a></li>
+            </ul>
+            <div class="nav-right">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                    <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"/>
+                        <line x1="12" y1="1" x2="12" y2="3"/>
+                        <line x1="12" y1="21" x2="12" y2="23"/>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                        <line x1="1" y1="12" x2="3" y2="12"/>
+                        <line x1="21" y1="12" x2="23" y2="12"/>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                    </svg>
+                    <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                    </svg>
+                </button>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <section class="stories">
+        <div class="container">
+            <a href="/stories" class="post-back">&larr; Back to Stories</a>
+            <article id="postContent" class="post-content"><div class="blog-card-meta"><span class="blog-card-category">build</span><span class="blog-card-date">September 13, 2026 &middot; 3 min read</span></div><h1 class="post-title">ImpactMetrik: A Three-Year, Vibecoded Build</h1><p>From time to time we are inspired to build. Inspired to follow a path. Inspired to own something and be part of it. Inspired to create.</p>
+<p>Why do I say all this? In December, I set out to build a Monitoring and Evaluation platform.</p>
+<p>I have the experience and the knowledge. I've built things for people through jobs, gigs, projects — you name it. Never mine, though. Never something built for the masses, on my own terms, carrying my own name.</p>
+<p><strong>Starting without the map</strong></p>
+<p>I knew I wanted to build something. What I didn't do was consider the markets, or study the other tools already out there. Doing that would have meant giving up before I started — every established player would have looked like a reason not to bother.</p>
+<p>Instead, I needed two things first: domain expertise, and at least one person who would buy into the dream. I had the first. Finding the second is its own story.</p>
+<p>Then I needed a place to start. So I asked myself the obvious question — what is the most critical thing in M&amp;E? The answer is reporting. And what feeds reporting? Collection.</p>
+<p>That made the next step easy: we need a survey tool.</p>
+<p>That's how <a href="https://surveys.impactmetrik.com" target="_blank" rel="noopener">surveys.impactmetrik.com</a> was born — a tool built from the ground up, still in beta, that collects data and lets the user build insights from it. As simple as that.</p>
+<p><strong>Why this is a series, and why three years</strong></p>
+<p>This is the first post in a series about the build, and it's going to span three years. Not because the tool needs three years to write — because the idea does, if it's going to mean anything:</p>
+<ol>
+<li>We have to test with real clients.</li>
+<li>We get feedback and iterate.</li>
+<li>We validate the idea fully.</li>
+</ol>
+<p>No shortcuts through any of those three. A tool nobody's actually used under real conditions isn't validated, it's just deployed.</p>
+<p><strong>And in the age of AI</strong></p>
+<p>This is going to be vibecoded from A to Z. That's not a disclaimer — it's the point. Building an M&amp;E platform used to require a team, a runway, and months before you had anything a client could touch. That calculus has changed. I intend to document exactly how it changes it, mistakes included.</p>
+<p>More posts in this series as surveys.impactmetrik.com moves from beta toward something real clients can lean on.</p>
+<div class="blog-card-tags"><span class="blog-card-tag">impactmetrik</span><span class="blog-card-tag">m&amp;e</span><span class="blog-card-tag">startup</span><span class="blog-card-tag">vibecoding</span><span class="blog-card-tag">ai</span><span class="blog-card-tag">building in public</span></div></article>
+            <nav id="postNav" class="post-nav">
+        <a class="post-nav-link post-nav-prev" href="/stories/the-gig-economy-a-consultants-honest-take/"><span class="post-nav-label">&larr; Older</span><span class="post-nav-title">The Gig Economy: A Consultant&#39;s Honest Take</span></a>
+        <span></span>
+    </nav>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p class="footer-tagline">CODE. DATA. INSIGHTS.</p>
+            <div class="footer-contact">
+                <div class="footer-contact-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                    </svg>
+                    <span>+254 (0) 723 603314</span>
+                </div>
+                <div class="footer-contact-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                    </svg>
+                    <a href="mailto:ansel@anselmelly.com">ansel@anselmelly.com</a>
+                </div>
+            </div>
+            <p>&copy; <span id="currentYear"></span> Ansel Melly. All rights reserved.</p>
+            <p class="footer-credit">built with <a href="https://claude.ai" target="_blank" rel="noopener">claude.ai</a> :)</p>
+        </div>
+    </footer>
+
+    <script src="/header.js"></script>
+</body>
+</html>

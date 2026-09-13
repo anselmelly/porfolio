@@ -11,6 +11,17 @@ const STORIES_DIR = path.join(ROOT, 'stories');
 const SITE_URL = 'https://anselmelly.com';
 
 const md = new MarkdownIt();
+const defaultLinkRender = md.renderer.rules.link_open || ((tokens, idx, options, env, self) => self.renderToken(tokens, idx, options));
+md.renderer.rules.link_open = (tokens, idx, options, env, self) => {
+    const token = tokens[idx];
+    const href = token.attrGet('href') || '';
+    if (/^https?:\/\//.test(href) && !href.startsWith(SITE_URL)) {
+        token.attrSet('target', '_blank');
+        token.attrSet('rel', 'noopener');
+    }
+    return defaultLinkRender(tokens, idx, options, env, self);
+};
+
 const posts = JSON.parse(fs.readFileSync(path.join(STORIES_DIR, 'index.json'), 'utf8'));
 posts.sort((a, b) => new Date(b.date) - new Date(a.date));
 
