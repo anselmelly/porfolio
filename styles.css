@@ -767,6 +767,16 @@ p {
     padding-left: 1.5em;
 }
 
+.post-content a {
+    color: var(--color-primary);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.post-content a:hover {
+    color: var(--color-primary-dark);
+}
+
 .post-nav {
     display: grid;
     grid-template-columns: 1fr 1fr;

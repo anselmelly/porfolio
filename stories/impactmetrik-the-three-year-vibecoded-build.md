@@ -30,4 +30,4 @@ No shortcuts through any of those three. A tool nobody's actually used under rea
 
 This is going to be vibecoded from A to Z. That's not a disclaimer — it's the point. Building an M&E platform used to require a team, a runway, and months before you had anything a client could touch. That calculus has changed. I intend to document exactly how it changes it, mistakes included.
 
-More posts in this series as surveys.impactmetrik.com moves from beta toward something real clients can lean on.
+More posts in this series as [surveys.impactmetrik.com](https://surveys.impactmetrik.com) moves from beta toward something real clients can lean on.
