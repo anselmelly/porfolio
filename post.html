@@ -97,7 +97,7 @@
         const contentEl = document.getElementById('postContent');
 
         if (slug) {
-            window.location.replace('/posts/' + encodeURIComponent(slug) + '/');
+            window.location.replace('/stories/' + encodeURIComponent(slug) + '/');
         } else {
             contentEl.innerHTML = '<p class="contact-intro">No post specified. <a href="/stories">Browse stories</a>.</p>';
         }

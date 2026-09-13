@@ -5,21 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="color-scheme" content="light dark">
 
-    <meta name="description" content="How I went from a weekend idea to a running Laravel job queue fetching NVD, EPSS, and CISA KEV data nightly — and why batch processing changed everything.">
+    <meta name="description" content="I replaced 80 sequential HTTP requests with a single pool call. The performance difference was embarrassing. Notes on how it works and where it breaks.">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://anselmelly.com/posts/building-phoebe-a-cve-intelligence-platform-from-scratch/">
+    <link rel="canonical" href="https://anselmelly.com/stories/laravel-httppool-is-underrated-for-batch-api-calls/">
 
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://anselmelly.com/posts/building-phoebe-a-cve-intelligence-platform-from-scratch/">
-    <meta property="og:title" content="Building Phoebe: A CVE Intelligence Platform from Scratch | Ansel Melly">
-    <meta property="og:description" content="How I went from a weekend idea to a running Laravel job queue fetching NVD, EPSS, and CISA KEV data nightly — and why batch processing changed everything.">
+    <meta property="og:url" content="https://anselmelly.com/stories/laravel-httppool-is-underrated-for-batch-api-calls/">
+    <meta property="og:title" content="Laravel Http::pool() is Underrated for Batch API Calls | Ansel Melly">
+    <meta property="og:description" content="I replaced 80 sequential HTTP requests with a single pool call. The performance difference was embarrassing. Notes on how it works and where it breaks.">
     <meta property="og:image" content="https://anselmelly.com/assets/logo.png">
-    <meta property="article:published_time" content="2026-03-05">
+    <meta property="article:published_time" content="2026-02-14">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://anselmelly.com/posts/building-phoebe-a-cve-intelligence-platform-from-scratch/">
-    <meta name="twitter:title" content="Building Phoebe: A CVE Intelligence Platform from Scratch | Ansel Melly">
-    <meta name="twitter:description" content="How I went from a weekend idea to a running Laravel job queue fetching NVD, EPSS, and CISA KEV data nightly — and why batch processing changed everything.">
+    <meta name="twitter:url" content="https://anselmelly.com/stories/laravel-httppool-is-underrated-for-batch-api-calls/">
+    <meta name="twitter:title" content="Laravel Http::pool() is Underrated for Batch API Calls | Ansel Melly">
+    <meta name="twitter:description" content="I replaced 80 sequential HTTP requests with a single pool call. The performance difference was embarrassing. Notes on how it works and where it breaks.">
     <meta name="twitter:image" content="https://anselmelly.com/assets/logo.png">
     <meta name="twitter:creator" content="@anselmelly">
 
@@ -29,18 +29,18 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-    <title>Building Phoebe: A CVE Intelligence Platform from Scratch | Ansel Melly</title>
+    <title>Laravel Http::pool() is Underrated for Batch API Calls | Ansel Melly</title>
     <link rel="stylesheet" href="/styles.css">
 
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "Building Phoebe: A CVE Intelligence Platform from Scratch",
-  "description": "How I went from a weekend idea to a running Laravel job queue fetching NVD, EPSS, and CISA KEV data nightly — and why batch processing changed everything.",
-  "datePublished": "2026-03-05",
-  "dateModified": "2026-03-05",
-  "url": "https://anselmelly.com/posts/building-phoebe-a-cve-intelligence-platform-from-scratch/",
+  "headline": "Laravel Http::pool() is Underrated for Batch API Calls",
+  "description": "I replaced 80 sequential HTTP requests with a single pool call. The performance difference was embarrassing. Notes on how it works and where it breaks.",
+  "datePublished": "2026-02-14",
+  "dateModified": "2026-02-14",
+  "url": "https://anselmelly.com/stories/laravel-httppool-is-underrated-for-batch-api-calls/",
   "author": {
     "@type": "Person",
     "name": "Ansel Kipchumba Melly",
@@ -51,7 +51,7 @@
     "name": "Ansel Kipchumba Melly"
   },
   "image": "https://anselmelly.com/assets/logo.png",
-  "keywords": "laravel, security, php, queues"
+  "keywords": "laravel, php, http, performance"
 }
     </script>
 </head>
@@ -101,25 +101,29 @@
     <section class="stories">
         <div class="container">
             <a href="/stories" class="post-back">&larr; Back to Stories</a>
-            <article id="postContent" class="post-content"><div class="blog-card-meta"><span class="blog-card-category">build</span><span class="blog-card-date">March 5, 2026 &middot; 8 min read</span></div><h1 class="post-title">Building Phoebe: A CVE Intelligence Platform from Scratch</h1><h2>Where it started</h2>
-<p>Phoebe started as a Friday evening question: <em>what if I had a single dashboard showing me every critical CVE relevant to the stack I actually use?</em> NVD exists. EPSS exists. CISA KEV exists. But none of them talk to each other in a way that's useful for a developer who just wants to know what to patch this week.</p>
-<p>Three days later I had a Laravel app fetching data from all three sources. Six weeks later it had a proper job queue architecture, deduplication, and a scoring system I actually trust.</p>
-<h2>The architecture</h2>
-<p>The core is three Artisan commands running on a schedule:</p>
+            <article id="postContent" class="post-content"><div class="blog-card-meta"><span class="blog-card-category">tech</span><span class="blog-card-date">February 14, 2026 &middot; 5 min read</span></div><h1 class="post-title">Laravel Http::pool() is Underrated for Batch API Calls</h1><h2>The problem</h2>
+<p>Fetching EPSS scores for 80 CVEs. Each score lives at a separate endpoint. The naive implementation: loop, fetch, wait. 80 requests × ~500ms average = 40 seconds. For a scheduled command that runs every night, this is fine. For anything interactive, it's a dealbreaker.</p>
+<h2>Http::pool() in one paragraph</h2>
+<p>Laravel's <code>Http::pool()</code> sends multiple HTTP requests concurrently using Guzzle promises under the hood. You define all your requests upfront, pass them to the pool, and get back an array of responses in the same order. The total time is roughly the time of the <em>slowest</em> single request, not the sum of all of them.</p>
+<pre><code>$responses = Http::pool(fn (Pool $pool) =&gt;
+    collect($cveIds)-&gt;map(fn ($id) =&gt;
+        $pool-&gt;get(&quot;https://api.first.org/data/v1/epss?cve={$id}&quot;)
+    )-&gt;all()
+);
+</code></pre>
+<h2>Where it breaks</h2>
+<p>A few things to watch:</p>
 <ul>
-<li><code>phoebe:FetchNvd</code> — pulls the NVD feed, normalises CPE strings</li>
-<li><code>phoebe:FetchEpss</code> — fetches EPSS scores in batch via <code>Http::pool()</code></li>
-<li><code>phoebe:FetchCve</code> — reconciles the two datasets, flags KEV entries</li>
+<li><strong>Rate limits.</strong> Sending 200 concurrent requests to an API that rate-limits at 100/minute will get you blocked. Chunk your pool calls.</li>
+<li><strong>Memory.</strong> All responses are held in memory simultaneously. For large response bodies, this adds up.</li>
+<li><strong>Error handling.</strong> A failed request in the pool doesn't throw — it returns a response object with a failed status. You have to check each one.</li>
 </ul>
-<p>Each command uses Laravel's lazy collections to avoid loading 200,000 CVE records into memory at once. This was the single biggest performance improvement — peak memory dropped from 800MB to under 40MB.</p>
-<h2>The batch processing decision</h2>
-<p>The original implementation fetched EPSS scores one CVE at a time. 80 sequential HTTP requests taking 45 seconds. Replacing it with a single <code>Http::pool()</code> call brought that down to under 3 seconds. I wrote a separate post about this — it's genuinely one of the most underused features in Laravel.</p>
-<h2>What's next</h2>
-<p>The platform is running. The next phase is the intelligence layer — correlating CVEs against a user-defined stack profile and surfacing only what's actually relevant. That's the part that turns a data aggregator into something useful.</p>
-<div class="blog-card-tags"><span class="blog-card-tag">laravel</span><span class="blog-card-tag">security</span><span class="blog-card-tag">php</span><span class="blog-card-tag">queues</span></div></article>
+<h2>The result</h2>
+<p>80 requests: 40 seconds sequential, 2.8 seconds pooled. Same data, same endpoints, 14× faster. I should have done this from the start.</p>
+<div class="blog-card-tags"><span class="blog-card-tag">laravel</span><span class="blog-card-tag">php</span><span class="blog-card-tag">http</span><span class="blog-card-tag">performance</span></div></article>
             <nav id="postNav" class="post-nav">
-        <a class="post-nav-link post-nav-prev" href="/posts/the-problem-with-how-african-developers-price-their-work/"><span class="post-nav-label">&larr; Older</span><span class="post-nav-title">The Problem with How African Developers Price Their Work</span></a>
-        <a class="post-nav-link post-nav-next" href="/posts/why-i-rewrote-the-cohort-triangle-query-again/"><span class="post-nav-label">Newer &rarr;</span><span class="post-nav-title">Why I Rewrote the Cohort Triangle Query (Again)</span></a>
+        <a class="post-nav-link post-nav-prev" href="/stories/nairobi-traffic-has-made-me-a-better-systems-thinker/"><span class="post-nav-label">&larr; Older</span><span class="post-nav-title">Nairobi Traffic Has Made Me a Better Systems Thinker</span></a>
+        <a class="post-nav-link post-nav-next" href="/stories/on-doing-an-msc-while-running-a-consulting-business/"><span class="post-nav-label">Newer &rarr;</span><span class="post-nav-title">On Doing an MSc While Running a Consulting Business</span></a>
     </nav>
         </div>
     </section>

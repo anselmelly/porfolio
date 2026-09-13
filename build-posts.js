@@ -1,17 +1,17 @@
 #!/usr/bin/env node
-// Generates static /posts/<slug>/index.html pages with real per-post meta tags
-// and JSON-LD, from posts/*.md + posts/index.json. Run before deploy.
+// Generates static /stories/<slug>/index.html pages with real per-post meta tags
+// and JSON-LD, from stories/*.md + stories/index.json. Run before deploy.
 
 const fs = require('fs');
 const path = require('path');
 const MarkdownIt = require('markdown-it');
 
 const ROOT = __dirname;
-const POSTS_DIR = path.join(ROOT, 'posts');
+const STORIES_DIR = path.join(ROOT, 'stories');
 const SITE_URL = 'https://anselmelly.com';
 
 const md = new MarkdownIt();
-const posts = JSON.parse(fs.readFileSync(path.join(POSTS_DIR, 'index.json'), 'utf8'));
+const posts = JSON.parse(fs.readFileSync(path.join(STORIES_DIR, 'index.json'), 'utf8'));
 posts.sort((a, b) => new Date(b.date) - new Date(a.date));
 
 const template = fs.readFileSync(path.join(ROOT, 'post-template.html'), 'utf8');
@@ -24,14 +24,14 @@ function escapeHtml(s) {
 
 for (let i = 0; i < posts.length; i++) {
     const post = posts[i];
-    const raw = fs.readFileSync(path.join(POSTS_DIR, `${post.slug}.md`), 'utf8');
+    const raw = fs.readFileSync(path.join(STORIES_DIR, `${post.slug}.md`), 'utf8');
     const rendered = md.render(raw);
 
     const older = i < posts.length - 1 ? posts[i + 1] : null;
     const newer = i > 0 ? posts[i - 1] : null;
     const navHtml = `
-        ${older ? `<a class="post-nav-link post-nav-prev" href="/posts/${older.slug}/"><span class="post-nav-label">&larr; Older</span><span class="post-nav-title">${escapeHtml(older.title)}</span></a>` : '<span></span>'}
-        ${newer ? `<a class="post-nav-link post-nav-next" href="/posts/${newer.slug}/"><span class="post-nav-label">Newer &rarr;</span><span class="post-nav-title">${escapeHtml(newer.title)}</span></a>` : '<span></span>'}
+        ${older ? `<a class="post-nav-link post-nav-prev" href="/stories/${older.slug}/"><span class="post-nav-label">&larr; Older</span><span class="post-nav-title">${escapeHtml(older.title)}</span></a>` : '<span></span>'}
+        ${newer ? `<a class="post-nav-link post-nav-next" href="/stories/${newer.slug}/"><span class="post-nav-label">Newer &rarr;</span><span class="post-nav-title">${escapeHtml(newer.title)}</span></a>` : '<span></span>'}
     `;
 
     const dateStr = new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
@@ -41,7 +41,7 @@ for (let i = 0; i < posts.length; i++) {
 
     const contentHtml = `<div class="blog-card-meta">${categoryHtml}<span class="blog-card-date">${metaLine}</span></div><h1 class="post-title">${escapeHtml(post.title)}</h1>` + rendered + `<div class="blog-card-tags">${tagsHtml}</div>`;
 
-    const canonical = `${SITE_URL}/posts/${post.slug}/`;
+    const canonical = `${SITE_URL}/stories/${post.slug}/`;
     const ogImage = `${SITE_URL}/assets/logo.png`;
 
     const jsonLd = {
@@ -75,15 +75,15 @@ for (let i = 0; i < posts.length; i++) {
         .replaceAll('{{NAV}}', navHtml)
         .replaceAll('{{JSON_LD}}', JSON.stringify(jsonLd, null, 2));
 
-    const outDir = path.join(POSTS_DIR, post.slug);
+    const outDir = path.join(STORIES_DIR, post.slug);
     fs.mkdirSync(outDir, { recursive: true });
     fs.writeFileSync(path.join(outDir, 'index.html'), html);
-    console.log(`built posts/${post.slug}/index.html`);
+    console.log(`built stories/${post.slug}/index.html`);
 }
 
 // regenerate sitemap.xml with real post URLs
 const sitemapPosts = posts.map(p => `\t<url>
-\t\t<loc>${SITE_URL}/posts/${p.slug}/</loc>
+\t\t<loc>${SITE_URL}/stories/${p.slug}/</loc>
 \t\t<lastmod>${p.date}</lastmod>
 \t\t<changefreq>monthly</changefreq>
 \t\t<priority>0.7</priority>
