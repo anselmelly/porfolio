@@ -17,40 +17,70 @@
                         box-sizing: border-box;
                     }
 
+                    :root {
+                        --bg: #f5f5f5;
+                        --text: #333;
+                        --card-bg: #fff;
+                        --heading: #2c3e50;
+                        --muted: #7f8c8d;
+                        --thead-bg: #34495e;
+                        --thead-text: #fff;
+                        --border: #ecf0f1;
+                        --row-hover: #f8f9fa;
+                        --link: #3498db;
+                        --shadow: rgba(0,0,0,0.1);
+                    }
+
+                    @media (prefers-color-scheme: dark) {
+                        :root {
+                            --bg: #16181d;
+                            --text: #d8dade;
+                            --card-bg: #1f2229;
+                            --heading: #eceff2;
+                            --muted: #9aa0a8;
+                            --thead-bg: #2a2e37;
+                            --thead-text: #eceff2;
+                            --border: #2f333c;
+                            --row-hover: #262a32;
+                            --link: #6db3f2;
+                            --shadow: rgba(0,0,0,0.4);
+                        }
+                    }
+
                     body {
                         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-                        background: #f5f5f5;
-                        color: #333;
+                        background: var(--bg);
+                        color: var(--text);
                         line-height: 1.6;
                     }
 
                     .container {
-                        max-width: 1200px;
+                        max-width: 1320px;
                         margin: 0 auto;
                         padding: 20px;
                     }
 
                     header {
-                        background: #fff;
+                        background: var(--card-bg);
                         padding: 30px;
                         margin-bottom: 30px;
                         border-radius: 8px;
-                        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                        box-shadow: 0 2px 4px var(--shadow);
                     }
 
                     h1 {
                         font-size: 28px;
                         margin-bottom: 10px;
-                        color: #2c3e50;
+                        color: var(--heading);
                     }
 
                     .description {
-                        color: #7f8c8d;
+                        color: var(--muted);
                         font-size: 14px;
                     }
 
                     .stats {
-                        background: #3498db;
+                        background: var(--link);
                         color: white;
                         padding: 15px 30px;
                         border-radius: 8px;
@@ -60,35 +90,43 @@
 
                     table {
                         width: 100%;
-                        background: #fff;
+                        background: var(--card-bg);
                         border-radius: 8px;
                         overflow: hidden;
-                        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                        box-shadow: 0 2px 4px var(--shadow);
                         border-collapse: collapse;
                     }
 
                     thead {
-                        background: #34495e;
-                        color: white;
+                        background: var(--thead-bg);
+                        color: var(--thead-text);
                     }
 
                     th {
                         padding: 15px;
                         text-align: left;
                         font-weight: 600;
-                        font-size: 14px;
+                        font-size: 12px;
                         text-transform: uppercase;
                         letter-spacing: 0.5px;
                     }
 
+                    th:first-child {
+                        font-size: 14px;
+                    }
+
                     td {
                         padding: 15px;
-                        border-bottom: 1px solid #ecf0f1;
+                        border-bottom: 1px solid var(--border);
+                        font-size: 12px;
+                    }
+
+                    td:first-child {
                         font-size: 14px;
                     }
 
                     tr:hover {
-                        background: #f8f9fa;
+                        background: var(--row-hover);
                     }
 
                     tr:last-child td {
@@ -96,7 +134,7 @@
                     }
 
                     a {
-                        color: #3498db;
+                        color: var(--link);
                         text-decoration: none;
                         word-break: break-all;
                     }
@@ -132,7 +170,7 @@
                         text-align: center;
                         margin-top: 30px;
                         padding: 20px;
-                        color: #7f8c8d;
+                        color: var(--muted);
                         font-size: 14px;
                     }
                 </style>
