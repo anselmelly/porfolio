@@ -10,7 +10,24 @@ Ansel Melly is a statistician and software engineer specializing in:
 - API integration and system connectivity
 - Linux server administration and Git version control
 
-BSc Statistics & Economics. Currently pursuing MSc Data Science & Analytics (in progress).
+BSc Statistics & Economics (KCA University). Currently pursuing MSc Data Science & Analytics at Strathmore University.
+
+## Pages
+
+- [Homepage](https://anselmelly.com/): About, consultancy services, portfolio, tech stack, testimonials, and contact.
+- [Stories](https://anselmelly.com/stories/): Blog covering data science, software engineering, and consulting.
+- [Resume/CV](https://anselmelly.com/assets/AnselMelly_Resume.pdf): Full work history, education, and skills.
+
+## Stories
+
+- [ImpactMetrik: A Three-Year, Vibecoded Build](https://anselmelly.com/stories/impactmetrik-the-three-year-vibecoded-build/): In December I set out to build an M&E platform of my own — not another client project. First post in a series about that build.
+- [The Gig Economy: A Consultant's Honest Take](https://anselmelly.com/stories/the-gig-economy-a-consultants-honest-take/): 10+ years in IT consultancy — how the gig economy actually works.
+- [Why I Rewrote the Cohort Triangle Query (Again)](https://anselmelly.com/stories/why-i-rewrote-the-cohort-triangle-query-again/): Why a "simple" retention report turned into a two-week CTE rabbit hole.
+- [Building Phoebe: A CVE Intelligence Platform from Scratch](https://anselmelly.com/stories/building-phoebe-a-cve-intelligence-platform-from-scratch/): A Laravel job queue fetching NVD, EPSS, and CISA KEV data nightly.
+- [The Problem with How African Developers Price Their Work](https://anselmelly.com/stories/the-problem-with-how-african-developers-price-their-work/): Why underpricing happens and a framework to fix it.
+- [On Doing an MSc While Running a Consulting Business](https://anselmelly.com/stories/on-doing-an-msc-while-running-a-consulting-business/): Systems for balancing postgraduate study with running a business.
+- [Laravel Http::pool() is Underrated for Batch API Calls](https://anselmelly.com/stories/laravel-httppool-is-underrated-for-batch-api-calls/): Replacing 80 sequential HTTP requests with a single pool call.
+- [Nairobi Traffic Has Made Me a Better Systems Thinker](https://anselmelly.com/stories/nairobi-traffic-has-made-me-a-better-systems-thinker/): Notes from two hours on Mombasa Road.
 
 ## Consultancy
 
@@ -38,11 +55,17 @@ BSc Statistics & Economics. Currently pursuing MSc Data Science & Analytics (in 
 - System integration
 - Technical project management
 
+## Projects
+
+- [ImpactMetrik Surveys](https://surveys.impactmetrik.com): A Monitoring & Evaluation survey and data collection platform, in beta. See the [build series on Stories](https://anselmelly.com/stories/impactmetrik-the-three-year-vibecoded-build/).
+
 ## Contact
 
 - Website: https://anselmelly.com
-- Email: Available on website
-- Location: Kenya
+- Email: ansel@anselmelly.com
+- LinkedIn: https://www.linkedin.com/in/anselmelly
+- GitHub: https://github.com/anselmelly
+- Location: Nairobi, Kenya
 
 ## Portfolio
 

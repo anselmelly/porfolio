@@ -6,6 +6,7 @@
     --color-primary: #4454a4;
     --color-primary-dark: #363f7d;
     --color-primary-light: #5a6bc0;
+    --color-accent-text: #4454a4;
     --color-secondary: #3da0da;
     --color-dark: #1F2937;
     --color-dark-alt: #374151;
@@ -61,6 +62,7 @@
         --color-gray-light: #1F2937;
         --color-gray-medium: #374151;
         --color-white: #F9FAFB;
+        --color-accent-text: #9fadea;
     }
 }
 
@@ -75,6 +77,7 @@
     --color-gray-light: #1F2937;
     --color-gray-medium: #374151;
     --color-white: #F9FAFB;
+    --color-accent-text: #9fadea;
 }
 
 /* ===================================
@@ -870,7 +873,7 @@ p {
     display: block;
     font-size: var(--font-size-5xl);
     font-weight: 700;
-    color: var(--color-primary);
+    color: var(--color-accent-text);
     margin-bottom: var(--spacing-xs);
 }
 
@@ -905,7 +908,7 @@ p {
 }
 
 .services-category h3 {
-    color: var(--color-primary);
+    color: var(--color-accent-text);
     margin-bottom: var(--spacing-md);
     font-size: var(--font-size-2xl);
 }
@@ -1032,7 +1035,7 @@ p {
     transform: translateY(0);
 }
 
-.portfolio-overlay h4 {
+.portfolio-overlay h3 {
     margin: 0;
     font-size: var(--font-size-lg);
     font-weight: 600;
@@ -1108,7 +1111,7 @@ p {
 }
 
 .stack-category h3 {
-    color: var(--color-primary);
+    color: var(--color-accent-text);
     margin-bottom: var(--spacing-md);
     font-size: var(--font-size-2xl);
 }
@@ -1143,7 +1146,7 @@ p {
 .stack-item .stack-letter {
     font-size: 2rem;
     font-weight: 700;
-    color: var(--color-primary);
+    color: var(--color-accent-text);
     font-family: var(--font-heading);
 }
 
@@ -1229,7 +1232,7 @@ p {
 
 .testimonial-card cite strong {
     display: block;
-    color: var(--color-primary);
+    color: var(--color-accent-text);
     font-size: var(--font-size-lg);
     margin-bottom: var(--spacing-xs);
 }
@@ -1332,7 +1335,7 @@ p {
 }
 
 .footer-credit a {
-    color: var(--color-primary);
+    color: var(--color-accent-text);
     text-decoration: underline;
     transition: var(--transition-base);
 }
