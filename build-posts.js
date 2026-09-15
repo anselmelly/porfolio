@@ -50,10 +50,22 @@ for (let i = 0; i < posts.length; i++) {
     const categoryHtml = post.category ? `<span class="blog-card-category">${escapeHtml(post.category)}</span>` : '';
     const tagsHtml = (post.tags || []).map(t => `<span class="blog-card-tag">${escapeHtml(t)}</span>`).join('');
 
-    const contentHtml = `<div class="blog-card-meta">${categoryHtml}<span class="blog-card-date">${metaLine}</span></div><h1 class="post-title">${escapeHtml(post.title)}</h1>` + rendered + `<div class="blog-card-tags">${tagsHtml}</div>`;
-
     const canonical = `${SITE_URL}/stories/${post.slug}/`;
     const ogImage = `${SITE_URL}/assets/logo.png`;
+
+    const shareUrl = encodeURIComponent(canonical);
+    const shareText = encodeURIComponent(post.title);
+    const shareHtml = `<div class="post-share">
+        <span class="post-share-label">Share</span>
+        <a class="post-share-link post-share-linkedin" href="https://www.linkedin.com/sharing/share-offsite/?url=${shareUrl}" target="_blank" rel="noopener" aria-label="Share on LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 110-4.13 2.07 2.07 0 010 4.13zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+        </a>
+        <a class="post-share-link post-share-x" href="https://twitter.com/intent/tweet?url=${shareUrl}&amp;text=${shareText}" target="_blank" rel="noopener" aria-label="Share on X">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.6 8.68L23.3 22h-7.02l-5.5-7.2L4.5 22H1.4l8.13-9.3L.7 2h7.2l4.97 6.57L18.9 2zm-1.23 18h1.95L7.4 3.9H5.3l12.37 16.1z"/></svg>
+        </a>
+    </div>`;
+
+    const contentHtml = `<div class="blog-card-meta">${categoryHtml}<span class="blog-card-date">${metaLine}</span></div><h1 class="post-title">${escapeHtml(post.title)}</h1>` + rendered + `<div class="blog-card-tags">${tagsHtml}</div>` + shareHtml;
 
     const jsonLd = {
         '@context': 'https://schema.org',

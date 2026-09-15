@@ -780,6 +780,43 @@ p {
     color: var(--color-primary-dark);
 }
 
+.post-share {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-lg);
+}
+
+.post-share-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-light);
+}
+
+.post-share-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: var(--color-bg-secondary);
+    color: var(--color-text-light);
+    transition: var(--transition-base);
+}
+
+.post-share-link svg {
+    width: 18px;
+    height: 18px;
+}
+
+.post-share-link:hover {
+    background-color: var(--color-primary);
+    color: #fff;
+}
+
 .post-nav {
     display: grid;
     grid-template-columns: 1fr 1fr;
