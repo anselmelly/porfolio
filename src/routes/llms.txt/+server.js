@@ -1,4 +1,8 @@
-# Ansel Melly - Statistician & Software Engineer
+import { posts } from '$lib/server/posts.js';
+
+const SITE = 'https://anselmelly.com';
+
+const head = `# Ansel Melly - Statistician & Software Engineer
 
 > Professional portfolio of Ansel Kipchumba Melly, a statistician and software engineer based in Kenya with 10+ years of experience.
 
@@ -18,18 +22,9 @@ BSc Statistics & Economics (KCA University). Currently pursuing MSc Data Science
 - [Stories](https://anselmelly.com/stories/): Blog covering data science, software engineering, and consulting.
 - [Resume/CV](https://anselmelly.com/assets/AnselMelly_Resume.pdf): Full work history, education, and skills.
 
-## Stories
+`;
 
-- [ImpactMetrik: A Three-Year, Vibecoded Build](https://anselmelly.com/stories/impactmetrik-the-three-year-vibecoded-build/): In December I set out to build an M&E platform of my own — not another client project. First post in a series about that build.
-- [The Gig Economy: A Consultant's Honest Take](https://anselmelly.com/stories/the-gig-economy-a-consultants-honest-take/): 10+ years in IT consultancy — how the gig economy actually works.
-- [Why I Rewrote the Cohort Triangle Query (Again)](https://anselmelly.com/stories/why-i-rewrote-the-cohort-triangle-query-again/): Why a "simple" retention report turned into a two-week CTE rabbit hole.
-- [Building Phoebe: A CVE Intelligence Platform from Scratch](https://anselmelly.com/stories/building-phoebe-a-cve-intelligence-platform-from-scratch/): A Laravel job queue fetching NVD, EPSS, and CISA KEV data nightly.
-- [The Problem with How African Developers Price Their Work](https://anselmelly.com/stories/the-problem-with-how-african-developers-price-their-work/): Why underpricing happens and a framework to fix it.
-- [On Doing an MSc While Running a Consulting Business](https://anselmelly.com/stories/on-doing-an-msc-while-running-a-consulting-business/): Systems for balancing postgraduate study with running a business.
-- [Laravel Http::pool() is Underrated for Batch API Calls](https://anselmelly.com/stories/laravel-httppool-is-underrated-for-batch-api-calls/): Replacing 80 sequential HTTP requests with a single pool call.
-- [Nairobi Traffic Has Made Me a Better Systems Thinker](https://anselmelly.com/stories/nairobi-traffic-has-made-me-a-better-systems-thinker/): Notes from two hours on Mombasa Road.
-
-## Consultancy
+const tail = `## Consultancy
 
 ### Statistical Services
 - Research design and methodology
@@ -78,3 +73,16 @@ R, Python, SPSS, Stata, Excel, SQL
 
 ### Development Stack
 PHP, Laravel, WordPress, JavaScript, MySQL, Linux, Git, Claude AI
+`;
+
+export const prerender = true;
+
+export const GET = () =>
+	new Response(
+		head +
+			'## Stories\n\n' +
+			posts.map((p) => `- [${p.title}](${SITE}/stories/${p.slug}/): ${p.excerpt}`).join('\n') +
+			'\n\n' +
+			tail,
+		{ headers: { 'Content-Type': 'text/plain; charset=utf-8' } }
+	);
