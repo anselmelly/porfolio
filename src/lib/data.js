@@ -189,62 +189,62 @@ export const services = [
 export const portfolio = [
 	{
 		"url": "https://hapakenya.com",
-		"img": "showcase/hapa_kenya.png",
+		"img": "showcase/hapa_kenya.webp",
 		"name": "Hapakenya"
 	},
 	{
 		"url": "https://aluochbonnita.com/",
-		"img": "showcase/bonnita.png",
+		"img": "showcase/bonnita.webp",
 		"name": "Bonita On Safari"
 	},
 	{
 		"url": "https://eaecgroup.com/",
-		"img": "showcase/eaec_group.png",
+		"img": "showcase/eaec_group.webp",
 		"name": "EAEC Group"
 	},
 	{
 		"url": "https://mukurustoves.org/",
-		"img": "showcase/mukuru_stoves.png",
+		"img": "showcase/mukuru_stoves.webp",
 		"name": "Mukuru Stoves"
 	},
 	{
 		"url": "https://bake.co.ke/",
-		"img": "showcase/bake.png",
+		"img": "showcase/bake.webp",
 		"name": "BAKE"
 	},
 	{
 		"url": "https://cherehani.org/",
-		"img": "showcase/cherehani.png",
+		"img": "showcase/cherehani.webp",
 		"name": "Cherehani Africa"
 	},
 	{
 		"url": "https://namlolweboatcircuit.com/",
-		"img": "showcase/namlolwe.png",
+		"img": "showcase/namlolwe.webp",
 		"name": "Namlolwe Boat Circuit"
 	},
 	{
 		"url": "https://savvycfo.com/",
-		"img": "showcase/savvycfo.png",
+		"img": "showcase/savvycfo.webp",
 		"name": "Savvy CFO"
 	},
 	{
 		"url": "https://charlotmagayi.com/",
-		"img": "showcase/charlot.png",
+		"img": "showcase/charlot.webp",
 		"name": "Charlot Magayi"
 	},
 	{
 		"url": "https://rsk.or.ke/",
-		"img": "showcase/rsk.png",
+		"img": "showcase/rsk.webp",
 		"name": "RSK"
 	},
 	{
 		"url": "https://mdvafrica.org/",
-		"img": "showcase/mdv.png",
+		"img": "showcase/mdv.webp",
 		"name": "Mwangaza Digital Villages"
 	},
 	{
 		"url": "https://vgfoods.co.ke/",
-		"img": "showcase/vgfoods.png",
+		"img": "showcase/vgfoods.webp",
 		"name": "VG Foods"
 	}
 ];
@@ -343,43 +343,43 @@ export const testimonials = [
 
 export const clients = [
 	{
-		"img": "bake.png",
+		"img": "bake.webp",
 		"name": "BAKE"
 	},
 	{
-		"img": "cherehani.png",
+		"img": "cherehani.webp",
 		"name": "Cherehani Africa"
 	},
 	{
-		"img": "mukuru.png",
+		"img": "mukuru.webp",
 		"name": "Mukuru Stoves"
 	},
 	{
-		"img": "eaecgroup.png",
+		"img": "eaecgroup.webp",
 		"name": "EAEC Group"
 	},
 	{
-		"img": "hapakenya.png",
+		"img": "hapakenya.webp",
 		"name": "Hapakenya"
 	},
 	{
-		"img": "zenevan.png",
+		"img": "zenevan.webp",
 		"name": "Zenevan"
 	},
 	{
-		"img": "sienna.png",
+		"img": "sienna.webp",
 		"name": "Sienna"
 	},
 	{
-		"img": "bonnita.png",
+		"img": "bonnita.webp",
 		"name": "Bonita On Safari"
 	},
 	{
-		"img": "mdv_logo.png",
+		"img": "mdv_logo.webp",
 		"name": "Mwangaza Digital Villages"
 	},
 	{
-		"img": "vg_foods.png",
+		"img": "vg_foods.webp",
 		"name": "VG Foods"
 	}
 ];
