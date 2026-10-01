@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, follow">
+<title>Redirecting… | Ansel Melly</title>
+<script>
+  // legacy /post.html?slug=<slug> links
+  var slug = new URLSearchParams(location.search).get('slug');
+  location.replace(slug ? '/stories/' + encodeURIComponent(slug) + '/' : '/stories/');
+</script>
+</head>
+<body><p><a href="/stories/">Browse stories</a></p></body>
+</html>

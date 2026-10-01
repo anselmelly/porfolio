@@ -270,6 +270,14 @@ p {
     display: block;
 }
 
+:root[data-theme="dark"] .sun-icon {
+    display: block;
+}
+
+:root[data-theme="dark"] .moon-icon {
+    display: none;
+}
+
 /* Mobile Menu Toggle */
 .mobile-menu-toggle {
     display: none;
