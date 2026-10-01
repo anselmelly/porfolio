@@ -15,7 +15,7 @@
     --color-gray-medium: #E5E7EB;
     --color-white: #FFFFFF;
     --color-text: #1F2937;
-    --color-text-light: #6B7280;
+    --color-text-light: #656D7B;
     
     --color-bg-primary: #FFFFFF;
     --color-bg-secondary: #F3F4F6;
@@ -1461,7 +1461,7 @@ p {
 
 .footer-credit {
     font-size: 0.75rem;
-    opacity: 0.7;
+    color: var(--color-text-light);
     margin-top: 0.5rem !important;
     font-weight: 400;
 }
