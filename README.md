@@ -76,6 +76,25 @@ npm run deploy
 
 Runs the build then `wrangler deploy`.
 
+## Releasing
+
+Versions follow [Semantic Versioning](https://semver.org/) (`MAJOR.MINOR.PATCH`), tagged `vX.Y.Z`:
+
+| Bump | Use it for | Example |
+|---|---|---|
+| **MAJOR** | A rebuild or change that breaks URLs or the deploy setup | 1.0.0 to 2.0.0 (static HTML to SvelteKit) |
+| **MINOR** | A new section, page or feature | adding a Projects page |
+| **PATCH** | Fixes, performance, styling, copy and new stories | fixing contrast, publishing a post |
+
+To cut a release:
+
+1. Move the changes under a new `## [X.Y.Z] - YYYY-MM-DD` heading in `CHANGELOG.md` and commit.
+2. Make sure the tree is clean on `main`, then run `npm version patch` (or `minor` / `major`). It bumps `package.json`, commits `release vX.Y.Z` and creates an annotated tag.
+3. `git push origin main --follow-tags`
+4. `gh release create vX.Y.Z --title "vX.Y.Z" --notes-file <(sed -n '/^## \[X.Y.Z\]/,/^## \[/p' CHANGELOG.md | sed '$d')`
+
+Pushing `main` is what deploys the site (Cloudflare Workers Builds); tags and releases only mark a version.
+
 ## License
 
 All rights reserved.
