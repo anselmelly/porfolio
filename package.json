@@ -17,7 +17,7 @@
     "markdown-it": "^13.0.2",
     "svelte": "^5.57.1",
     "svelte-check": "^4.7.6",
-    "typescript": "^7.0.2",
+    "typescript": "^5.9.3",
     "vite": "^8.3.1",
     "wrangler": "^4.128.0"
   },
