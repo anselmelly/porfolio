@@ -6,7 +6,7 @@
 	<div class="container">
 		<div class="about-content">
 			<div class="about-image">
-				<img src="/assets/profile_picture.jpg" alt="Ansel Melly" />
+				<img src="/assets/profile_picture.webp" alt="Ansel Melly" width="560" height="560" loading="lazy" decoding="async" />
 			</div>
 			<div class="about-text">
 				<h2>About Me</h2>

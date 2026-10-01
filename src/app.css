@@ -1013,6 +1013,44 @@ p {
 }
 
 /* ===================================
+   Devicon subset (self-hosted)
+   Only the glyphs used in the Tech Stack section, from devicon 2.17.0 (MIT).
+   Regenerate with fontTools.subset if icons are added to data.js.
+   =================================== */
+@font-face {
+    font-family: "devicon";
+    src: url("/fonts/devicon-subset.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+[class^="devicon-"],
+[class*=" devicon-"] {
+    font-family: "devicon" !important;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.devicon-azuresqldatabase-plain:before { content: "\e93c"; }
+.devicon-git-plain:before { content: "\ea2d"; }
+.devicon-javascript-plain:before { content: "\ea81"; }
+.devicon-laravel-original:before { content: "\eac3"; }
+.devicon-linux-plain:before { content: "\eac9"; }
+.devicon-mysql-original:before { content: "\eafd"; }
+.devicon-php-plain:before { content: "\eb68"; }
+.devicon-python-plain:before { content: "\eb9c"; }
+.devicon-r-plain:before { content: "\ebdb"; }
+.devicon-spss-plain:before { content: "\ec18"; }
+.devicon-stata-original-wordmark:before { content: "\ec26"; }
+.devicon-wordpress-plain:before { content: "\ecac"; }
+
+/* ===================================
    Portfolio Section
    =================================== */
 .portfolio {

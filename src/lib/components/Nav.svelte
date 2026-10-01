@@ -20,7 +20,7 @@
 	<nav class="nav-container">
 		<div class="logo">
 			<a href="/#home">
-				<img src="/assets/logo.png" alt="Ansel Melly Logo" />
+				<img src="/assets/logo-nav.webp" alt="Ansel Melly Logo" width="508" height="210" />
 			</a>
 		</div>
 		<ul class="nav-links" class:active={open}>
