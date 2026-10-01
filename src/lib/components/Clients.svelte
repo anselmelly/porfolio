@@ -8,7 +8,7 @@
 		<div class="clients-grid">
 			{#each clients as { img, name }}
 				<div class="client-logo light-logo">
-					<img src="/assets/clients/{img}" alt={name} loading="lazy" />
+					<img src="/assets/clients/{img}" alt={name} width="500" height="300" loading="lazy" />
 				</div>
 			{/each}
 		</div>
