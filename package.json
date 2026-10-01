@@ -2,12 +2,24 @@
   "name": "anselmelly.com",
   "private": true,
   "scripts": {
-    "build": "node build-posts.js",
-    "dev": "wrangler dev --port 8934",
+    "dev": "vite dev --port 8934",
+    "build": "vite build",
+    "build:posts": "node build-posts.cjs",
+    "preview": "vite preview",
+    "prepare": "svelte-kit sync || echo ''",
+    "check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json",
     "deploy": "npm run build && wrangler deploy"
   },
   "devDependencies": {
+    "@sveltejs/adapter-static": "^3.0.10",
+    "@sveltejs/kit": "^2.70.3",
+    "@sveltejs/vite-plugin-svelte": "^7.3.1",
     "markdown-it": "^13.0.2",
+    "svelte": "^5.57.1",
+    "svelte-check": "^4.7.6",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.1",
     "wrangler": "^4.128.0"
-  }
+  },
+  "type": "module"
 }
