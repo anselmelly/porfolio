@@ -88,7 +88,7 @@ Versions follow [Semantic Versioning](https://semver.org/) (`MAJOR.MINOR.PATCH`)
 
 To cut a release:
 
-1. Move the changes under a new `## [X.Y.Z] - YYYY-MM-DD` heading in `CHANGELOG.md` and commit.
+1. Move the changes under a new `## [X.Y.Z] - YYYY-MM-DD` heading in `CHANGELOG.md` and commit. The newest date there is also the homepage `lastmod` in `sitemap.xml`.
 2. Make sure the tree is clean on `main`, then run `npm version patch` (or `minor` / `major`). It bumps `package.json`, commits `release vX.Y.Z` and creates an annotated tag.
 3. `git push origin main --follow-tags`
 4. `gh release create vX.Y.Z --title "vX.Y.Z" --notes-file <(sed -n '/^## \[X.Y.Z\]/,/^## \[/p' CHANGELOG.md | sed '$d')`

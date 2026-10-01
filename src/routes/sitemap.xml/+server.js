@@ -1,13 +1,19 @@
 import { posts } from '$lib/server/posts.js';
+import changelog from '../../../CHANGELOG.md?raw';
 
 const SITE = 'https://anselmelly.com';
-const LASTMOD = '2026-09-02';
+
+// homepage changes ship as releases: use the newest "## [x.y.z] - date" in CHANGELOG.md
+const SITE_UPDATED = changelog.match(/^## \[\d[^\]]*\] - (\d{4}-\d{2}-\d{2})/m)[1];
+// posts are sorted newest first
+const STORIES_UPDATED = posts[0].date;
+const RESUME_UPDATED = '2026-09-02';
 
 // [path, lastmod, changefreq, priority]
 const pages = [
-	['/', LASTMOD, 'monthly', '1.0'],
-	['/stories/', LASTMOD, 'weekly', '0.8'],
-	['/assets/AnselMelly_Resume.pdf', LASTMOD, 'yearly', '0.6'],
+	['/', SITE_UPDATED, 'monthly', '1.0'],
+	['/stories/', STORIES_UPDATED, 'weekly', '0.8'],
+	['/assets/AnselMelly_Resume.pdf', RESUME_UPDATED, 'yearly', '0.6'],
 	...posts.map((p) => [`/stories/${p.slug}/`, p.date, 'monthly', '0.7'])
 ];
 
